@@ -1,0 +1,55 @@
+{
+  "reviews": [
+    {
+      "run_id": "eval-1-hbv-case-control-with_skill",
+      "feedback": "things look great ",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    },
+    {
+      "run_id": "eval-1-hbv-case-control-without_skill",
+      "feedback": "Things also look great. Just too long ",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    },
+    {
+      "run_id": "eval-2-immortal-time-bias-with_skill",
+      "feedback": "Should explain what the code whenever the step start, not the last section at the end - What the Code Does, Step by Step",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    },
+    {
+      "run_id": "eval-2-immortal-time-bias-without_skill",
+      "feedback": "looks great - better than with_skill actually ",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    },
+    {
+      "run_id": "eval-3-discussion-writing-with_skill",
+      "feedback": "too long ",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    },
+    {
+      "run_id": "eval-3-discussion-writing-without_skill",
+      "feedback": "this one is better than with_skill",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    },
+    {
+      "run_id": "eval-4-vietnamese-meta-with_skill",
+      "feedback": "ok",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    },
+    {
+      "run_id": "eval-4-vietnamese-meta-without_skill",
+      "feedback": "this one is better ",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    },
+    {
+      "run_id": "eval-5-mendelian-randomization-with_skill",
+      "feedback": "ok",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    },
+    {
+      "run_id": "eval-5-mendelian-randomization-without_skill",
+      "feedback": "too long and not practical. With_skill is better ",
+      "timestamp": "2026-03-29T19:12:14.868Z"
+    }
+  ],
+  "status": "complete"
+}

@@ -1,0 +1,35 @@
+{
+  "skill_name": "epi-research",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm designing a case-control study on HBV infection and hepatocellular carcinoma in Vietnam. My supervisor says I should use hospital controls but I'm worried about bias. Can you help me think through the control selection strategy and what confounders I need to adjust for?",
+      "expected_output": "Guidance on hospital vs community controls (Berkson's bias), source population concept, key confounders (HBV, HCV, alcohol, aflatoxin, cirrhosis, sex, age, SES), suggestion to draw a DAG, mention of Vietnamese HBV prevalence context",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I have a survival analysis dataset from a Vietnamese cancer registry. Patients were diagnosed with gastric cancer between 2010-2020. I want to run a Cox regression to look at whether H. pylori treatment affects 5-year survival, but I'm worried about immortal time bias. My data has: id, diagnosis_date, treatment_date, death_date, censor_date. Can you write the R code for this correctly?",
+      "expected_output": "Explanation of immortal time bias, correct counting process format for Cox model (tstart/tstop/event), R code using Surv(tstart, tstop, event) ~ treatment, note about time-varying exposure, assumption check code (cox.zph), visualization",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I'm writing the Discussion section for a paper on air pollution (PM2.5) and lung cancer in non-smoking Vietnamese women. We found HR=1.62 (95% CI: 1.28-2.05) per 10 μg/m³ increase in PM2.5. Can you help me write the Discussion? I need to address bias concerns, compare to existing literature, and discuss the EGFR mutation angle.",
+      "expected_output": "Well-structured Discussion following key finding → prior evidence comparison → biological plausibility (EGFR, oxidative stress) → alternative explanations (confounding by cooking fumes, recall/measurement) → strengths/limitations → implications. Should use PEEL paragraphs, appropriate hedging, avoid overclaiming causation, mention Vietnamese context (indoor cooking, coal use).",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Tôi đang thực hiện một nghiên cứu meta-phân tích về mối liên quan giữa tiêu thụ rượu bia và ung thư vú. Tôi có 15 nghiên cứu với I²=72%. Bạn có thể hướng dẫn tôi về cách xử lý tính không đồng nhất cao này và các phân tích độ nhạy cần thực hiện không?",
+      "expected_output": "Vietnamese-language response. Guidance on I²=72% (substantial heterogeneity), should not blindly pool, subgroup analyses (study design, region, menopausal status, alcohol type, dose), meta-regression, sensitivity analyses (remove low-quality studies, influence analysis, leave-one-out), publication bias assessment, GRADE downgrading due to heterogeneity.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I want to do a Mendelian randomization study to test whether BMI causally increases colorectal cancer risk using the UK Biobank. What genetic instruments should I use, and what sensitivity analyses do I absolutely need to report? I've found 97 genome-wide significant SNPs for BMI from the GIANT consortium.",
+      "expected_output": "Guidance on clumping SNPs (r²<0.001), checking F-statistics (>10, ideally >50), two-sample MR setup with TwoSampleMR package, all required sensitivity analyses (IVW main, MR-Egger+intercept test, weighted median, weighted mode, MR-PRESSO), funnel plot, leave-one-out, Steiger filtering for causal direction, STROBE-MR reporting, caveats about UK Biobank (European ancestry, healthy volunteer bias).",
+      "files": []
+    }
+  ]
+}

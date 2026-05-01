@@ -1,0 +1,9 @@
+{
+  "name": "dhh-research",
+  "description": "DHH's curated research toolkit: NotebookLM automation, academic paper pipeline (write/review), epidemiology research mentor, knowledge-graph builder, code review, and superpowers meta-skill. Bundled for use in Claude Cowork.",
+  "version": "0.1.0",
+  "author": {
+    "name": "DHH",
+    "email": "dzungho.fsh@gmail.com"
+  }
+}
