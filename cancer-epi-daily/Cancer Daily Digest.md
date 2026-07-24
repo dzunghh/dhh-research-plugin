@@ -8,6 +8,8 @@ Hub note for the **cancer epidemiology daily digest** — a rolling PubMed liter
 
 ## All digests (newest first)
 
+- [[2026-07-23]]
+- [[2026-07-22]]
 - [[2026-07-21]]
 - [[2026-07-20]]
 - [[2026-07-19]]
