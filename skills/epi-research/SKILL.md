@@ -28,7 +28,7 @@ Full-spectrum epidemiologist support — from formulating a research question to
 
 **Confounding and bias first.** Every analysis addresses: adjustment set (DAG-derived), likely biases, direction of bias.
 
-**CIs over p-values. Associations, not causation** (observational data). Hedge language proportional to evidence strength.
+**CIs over p-values. Name the identification conditions, don't just disclaim causation.** State the causal question; report which of exchangeability/positivity/consistency hold vs are assumed (`references/causal-identification.md`). Hedge to how defensible those conditions are.
 
 **Vietnamese context.** Respond in Vietnamese and apply local context when the user writes in Vietnamese or asks about Vietnamese data. Load `references/vietnamese-context.md`.
 
@@ -42,7 +42,7 @@ Activate with `mode: [name]` or detect from context:
 |------|-----------|-----------|
 | `formulate` | Research question | Sharpen RQ with PICO/PICOT, check novelty, feasibility, and counterfactual clarity |
 | `design` | Study design & protocol | Match design to RQ, sample size, control selection, identify threats upfront |
-| `causal` | Causal inference & DAGs | Build DAGs, apply backdoor criterion, identify mediators/colliders, plan sensitivity analyses |
+| `causal` | Causal inference & DAGs | Check exchangeability/positivity/consistency, then DAG + backdoor criterion, watch for M-bias, plan E-value sensitivity |
 | `analysis` | Statistical analysis (R/Stata) | Code with inline comments, assumption checks, publication-ready output |
 | `interpret` | Results interpretation | Effect size + CI, Bradford Hill, bias direction, clinical vs statistical importance |
 | `appraise` | Critical appraisal | Systematic validity assessment of a paper or protocol; TTE studies use the TARGET statement |
@@ -103,16 +103,16 @@ Use **one focused probe** when the user's framing has a gap — never more than 
 | Rare exposure → outcomes | Cohort | HR / RR | Immortal time bias, loss to follow-up |
 | Rare outcome → exposures | Case-control | OR | Berkson's bias, recall bias, control selection |
 | Disease burden | Cross-sectional | PR | Reverse causation, prevalent cases |
-| Evidence synthesis | Systematic review / meta-analysis | Pooled OR/RR | Heterogeneity, publication bias, GRADE |
+| Evidence synthesis | Systematic review / meta-analysis | Pooled OR/RR | Heterogeneity, publication bias, GRADE, RoB 2/ROBINS-I — `references/evidence-synthesis.md` |
 | Causal (treatment strategy) | Target trial emulation | HR / RR (ITT or PP) | Time zero misalignment, immortal time bias, depletion of susceptibles |
 | Causal (genetic IV) | Mendelian randomization | IV estimate | Pleiotropy |
 | Prognosis / time-to-event | Survival analysis | HR, KM curves | Competing risks, PH assumption |
 
-**OR vs RR**: OR ≈ RR only when outcome prevalence <10%. For common outcomes, OR overestimates RR — don't treat them interchangeably.
+**OR vs RR — depends on sampling scheme, not just prevalence**: density sampling → OR = rate ratio (exact); case-cohort → OR = risk ratio (exact); only cumulative/exclusive sampling needs rarity for OR ≈ RR. Density sampling is the *typical* case-control design — check the scheme before reaching for the rarity caveat. Table: `references/measures-and-designs.md`.
 
-**DAG structures**: Fork (A←C→B) → **adjust**; Chain (A→M→B) → **do not adjust**; Collider (A→K←B) → **never adjust**
+**DAG structures**: Fork (A←C→B) → **adjust**; Chain (A→M→B) → **do not adjust**; Collider (A→K←B) → **never adjust**; **M-bias** (confounder-shaped, collider-structured) → **do not adjust** — draw the DAG, don't table-select on exposure/outcome association alone.
 
-Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: load `references/study-designs.md`
+Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: load `references/study-designs.md` · For exchangeability/positivity/consistency and E-value: load `references/causal-identification.md`
 
 ---
 
@@ -150,7 +150,7 @@ Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: loa
 | Prognostic model | TRIPOD |
 | Mendelian randomization | STROBE-MR |
 
-**Style**: Quantify ("18% reduction"); hedge to evidence ("may suggest" → "indicate" → "demonstrate"); PEEL paragraphs; specific limitations beat generic ones; never claim causation from observational data.
+**Style**: Quantify ("18% reduction"); hedge to evidence ("may suggest" → "indicate" → "demonstrate"); PEEL paragraphs; specific limitations beat generic ones; causal claims are defensible once identification conditions are named (`references/causal-identification.md`) — skip the reflexive association-only disclaimer.
 
 **Discussion structure**: Finding + estimate (1 sentence) → Prior evidence → Plausibility → Alternatives/bias (be specific about direction) → Strengths & Limitations → Implications → Conclusion
 
@@ -187,7 +187,7 @@ Trigger these skills for advanced tasks instead of handling in-skill:
 4. Most likely bias and its direction
 5. GRADE (meta-analysis): risk of bias, inconsistency, indirectness, imprecision, publication bias
 
-Bradford Hill criteria (guides, not requirements): strength, consistency, specificity, **temporality** (essential), gradient, plausibility, coherence, experiment, analogy.
+**Bradford Hill viewpoints** (Hill's term — not "criteria," not a checklist): (1) strength, (2) consistency, (3) specificity, (4) **temporality — only necessary condition**, (5) biological gradient, (6) plausibility, (7) coherence, (8) experimental evidence, (9) analogy. Specificity/analogy carry least weight (multicausality is the norm). Judgement aids, not a scoring rubric. Detail: `references/causal-identification.md`.
 
 ---
 
@@ -198,6 +198,9 @@ Load **only when needed**:
 | File | Load when… |
 |------|-----------|
 | `references/study-designs.md` | Detailed design guidance, DAG examples, MR assumptions, TTE protocol components, TARGET statement, competing risks, GRADE table, sample size |
-| `references/statistical-methods.md` | Full code templates: Cox, Fine-Gray, meta-analysis, MR, imputation, PSM |
+| `references/statistical-methods.md` | Full code templates: Cox, Fine-Gray, meta-analysis, MR, imputation, PSM, E-value |
 | `references/writing-guidelines.md` | Full STROBE/PRISMA structure, null findings framework, submission checklist |
 | `references/vietnamese-context.md` | Vietnamese language, Vietnamese health data, local healthcare context |
+| `references/causal-identification.md` | Exchangeability/positivity/consistency, target trial, DAG/M-bias detail, E-value & negative controls, Table 2 fallacy, full Bradford Hill weighting |
+| `references/evidence-synthesis.md` | RoB 2 vs ROBINS-I, heterogeneity (I²/τ²/prediction interval), publication bias, full GRADE domains — also used by `storm-research`'s systematic-review path |
+| `references/measures-and-designs.md` | Case-control sampling schemes and what OR estimates, bias direction reasoning, survival analysis (PH assumption, time-varying covariates, competing risks) |

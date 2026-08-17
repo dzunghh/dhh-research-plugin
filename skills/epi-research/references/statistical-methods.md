@@ -151,7 +151,28 @@ rma(yi, vi, mods = ~ year + region, data = meta_data)
 ```
 
 **Heterogeneity thresholds**: I² <25% low · 25–75% moderate · >75% high
-**When I² >50%**: investigate sources (subgroup, meta-regression) before pooling. Report prediction interval, not just summary estimate.
+**When I² >50%**: investigate sources (subgroup, meta-regression) before pooling. Report prediction interval, not just summary estimate — see `references/evidence-synthesis.md` for why the two are not interchangeable.
+**Risk-of-bias tool by design**: RCTs → RoB 2; non-randomized studies → ROBINS-I. Never RoB 2 on an observational study. Full guidance and GRADE domains: `references/evidence-synthesis.md`.
+
+---
+
+## Sensitivity Analysis for Unmeasured Confounding (E-value)
+
+```r
+library(EValue)
+
+# For a risk ratio (or approximately-collapsible OR/HR with rare outcome)
+evalues.RR(est = 1.8, lo = 1.3, hi = 2.5)
+# Reports E-value for the point estimate AND for the CI limit closer to the null —
+# report both; a strong point estimate can still have a fragile CI.
+
+# For a risk/odds ratio further from collapsibility, or continuous outcomes, see
+# evalues.OR() / evalues.HR() / evalues.MD() in the same package.
+```
+
+Manual formula (risk ratio ≥ 1): `E = RR + sqrt(RR * (RR - 1))`. If RR < 1, invert first
+(`RR' = 1/RR`) then apply. See `references/causal-identification.md` for interpretation and a
+worked example.
 
 ---
 

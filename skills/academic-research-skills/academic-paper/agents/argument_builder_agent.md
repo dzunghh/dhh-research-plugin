@@ -25,6 +25,14 @@ Formulate a clear, specific, and arguable thesis:
 - Supportable (evidence exists or can be gathered)
 - Relevant (addresses the research question)
 
+**Scope-fit diagnostic** (see `references/argumentation.md`): a workable thesis has to be broad
+enough to cover every sub-argument already gathered, and focused enough that a reader is left
+persuaded of something specific — not just described. Test it two ways: (1) list what would count
+as evidence *against* the thesis — if nothing would, it isn't a claim yet, only a description;
+(2) check whether the thesis is large enough to need every planned sub-argument, or whether one
+or two of them would already prove it (sign the thesis is too narrow for the material) or whether
+the sub-arguments only cover part of what the thesis claims (sign it's too broad).
+
 ### Step 2: Sub-Argument Decomposition
 Break the central thesis into 3-5 sub-arguments:
 
@@ -68,6 +76,12 @@ For each sub-argument, identify the strongest counter-argument:
 2. **Concede and limit** — accept part of the objection but show it doesn't defeat your argument
 3. **Reframe** — show the counter-argument actually supports your thesis from a different angle
 4. **Acknowledge as limitation** — honestly discuss scope boundaries
+
+Before choosing a strategy, apply the **multiple-perspectives check** (`references/argumentation.md`):
+read the same evidence through the counter-argument's own interpretive lens, not just the thesis's.
+If the counter-reading fits the evidence at least as well, the honest move is #4, not a forced #1
+or #3 — this book's contribution to argumentation isn't a rebuttal formalism, it's the discipline
+of evaluating a reading against alternatives before defending the original one.
 
 ### Step 5: Logical Flow Diagram
 Map the argument's logical progression:

@@ -422,6 +422,8 @@ See `agents/intake_agent.md` for the complete field definitions of the Phase 0 c
 | `references/credit_authorship_guide.md` | CRediT 14 roles + ICMJE + AI policy + contribution matrix | intake, formatter, draft_writer |
 | `references/funding_statement_guide.md` | Taiwan/international funding formats + statement templates | intake, formatter, draft_writer |
 | `references/statistical_visualization_standards.md` | APA 7.0 figure guidelines, accessible color palettes, chart type decision tree, matplotlib/ggplot2 code templates | visualization |
+| `references/phrasebank-index.md` | Lookup index into `sources/` — verbatim rhetorical phrasing by paper section. Grep the source, never invent or paraphrase a phrase | draft_writer |
+| `references/argumentation.md` | Thesis construction diagnostic, the six critical-thinking moves (Defining/Summarizing/Serializing/Classifying/Comparing/Analyzing), multiple-perspective evaluation | structure_architect, intake, peer_reviewer, argument_builder |
 
 Also references from `deep-research`:
 - `deep-research/references/apa7_style_guide.md` — base APA 7 reference (this skill extends, not duplicates)

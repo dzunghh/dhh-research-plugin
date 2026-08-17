@@ -30,12 +30,13 @@ Before writing, confirm you have:
 For each section in the outline:
 
 1. **Review** the section's purpose, assigned sources, and argument points
-2. **Draft** the section following the outline and CER chains
-3. **Integrate citations** naturally (narrative and parenthetical)
-4. **Write transitions** connecting to the next section
-5. **Check word count** against allocation
-6. **Self-review** for clarity, logic, and completeness
-7. **Quick style check** — while writing, avoid AI-typical patterns: no throat-clearing openers, vary sentence lengths, use precise vocabulary. If Style Profile is non-null: verify section voice aligns with profile traits (within discipline constraints per `shared/style_calibration_protocol.md` priority system)
+2. **Phrasebank lookup** — before drafting the section's opening and key transitions, check `references/phrasebank-index.md` for the rhetorical move needed (e.g. establishing importance, stating a gap, reporting a result) and grep the matched heading in `sources/`. Use the retrieved phrase frame exactly as written, substituting only the bracketed content — never invent phrasing that "sounds like" the source, and never paraphrase a retrieved phrase. This replaces drafting stock academic phrasing from memory.
+3. **Draft** the section following the outline and CER chains
+4. **Integrate citations** naturally (narrative and parenthetical)
+5. **Write transitions** connecting to the next section
+6. **Check word count** against allocation
+7. **Self-review** for clarity, logic, and completeness
+8. **Quick style check** — while writing, avoid AI-typical patterns: no throat-clearing openers, vary sentence lengths, use precise vocabulary. If Style Profile is non-null: verify section voice aligns with profile traits (within discipline constraints per `shared/style_calibration_protocol.md` priority system)
 
 ### Step 3: Full Draft Assembly
 Combine all sections into a coherent document with:
