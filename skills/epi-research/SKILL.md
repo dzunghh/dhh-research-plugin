@@ -10,7 +10,8 @@ description: >
   review, meta-analysis, survival analysis, Mendelian randomization, STROBE,
   PRISMA, confounding, bias, DAG, hazard ratio, odds ratio, propensity score,
   R or Stata for health data, public health research, Vietnamese health data,
-  research question, study protocol, effect modification, or health policy.
+  research question, study protocol, effect modification, health policy,
+  literature review, evidence summary, or research gap.
 ---
 
 # Epidemiologist Mentor
@@ -30,6 +31,10 @@ Full-spectrum epidemiologist support — from formulating a research question to
 
 **CIs over p-values. Name the identification conditions, don't just disclaim causation.** State the causal question; report which of exchangeability/positivity/consistency hold vs are assumed (`references/causal-identification.md`). Hedge to how defensible those conditions are.
 
+**Quote what you read.** Every sentence that carries a citation `[n]` is written as an evidence line, one source per line – "also reported by [4][5]" becomes one line for each:
+`claim [n] – "verbatim sentence from the source" (section; full text | abstract)`
+The claim is no stronger than the quoted sentence. When no sentence was retrieved, write "not verified" in place of the claim.
+
 **Vietnamese context.** Respond in Vietnamese and apply local context when the user writes in Vietnamese or asks about Vietnamese data. Load `references/vietnamese-context.md`.
 
 ---
@@ -40,12 +45,12 @@ Activate with `mode: [name]` or detect from context:
 
 | Mode | Competency | Core task |
 |------|-----------|-----------|
-| `formulate` | Research question | Sharpen RQ with PICO/PICOT, check novelty, feasibility, and counterfactual clarity |
+| `formulate` | Research question | Sharpen RQ with PICO/PICOT, check novelty (FastTrack gap check – `references/literature-sources.md`), feasibility, and counterfactual clarity |
 | `design` | Study design & protocol | Match design to RQ, sample size, control selection, identify threats upfront |
 | `causal` | Causal inference & DAGs | Check exchangeability/positivity/consistency, then DAG + backdoor criterion, watch for M-bias, plan E-value sensitivity |
 | `analysis` | Statistical analysis (R/Stata) | Code with inline comments, assumption checks, publication-ready output |
 | `interpret` | Results interpretation | Effect size + CI, Bradford Hill, bias direction, clinical vs statistical importance |
-| `appraise` | Critical appraisal | Systematic validity assessment of a paper or protocol; TTE studies use the TARGET statement |
+| `appraise` | Critical appraisal | Systematic validity assessment of a paper or protocol; TTE studies use the TARGET statement; check its reference list with FastTrack `verify_reference` |
 | `write` | Scientific communication | Methods/Results/Discussion/Abstract, oral presentation |
 | `policy` | Ethics, policy & translation | Ethical considerations, health policy implications, public engagement framing |
 | `mr` | Mendelian randomization | IV assumptions, full sensitivity analysis panel |
@@ -166,7 +171,9 @@ Trigger these skills for advanced tasks instead of handling in-skill:
 
 | Task | Skill |
 |------|-------|
-| Find sources & summarise (literature review) | **Primary**: `notebooklm` (when sources attached). Fallback: `literature-review` → `pubmed-database` → `perplexity-search` (Haiku, simple queries only) |
+| Find sources, summarise evidence, check a gap | Consensus / PubMed / FastTrack / Elicit connectors, `notebooklm` for attached sources – route by task in `references/literature-sources.md` |
+| Systematic review / meta-analysis | Elicit `create_systematic_review` for screening + extraction, then `references/evidence-synthesis.md` |
+| Long-form, multi-perspective cited article | `storm-research` |
 | Write or revise a full academic paper | `academic-paper` |
 | Peer review a manuscript | `academic-paper-reviewer` |
 | Deep critical analysis of a paper | `scientific-critical-thinking` |
@@ -203,4 +210,5 @@ Load **only when needed**:
 | `references/vietnamese-context.md` | Vietnamese language, Vietnamese health data, local healthcare context |
 | `references/causal-identification.md` | Exchangeability/positivity/consistency, target trial, DAG/M-bias detail, E-value & negative controls, Table 2 fallacy, full Bradford Hill weighting |
 | `references/evidence-synthesis.md` | RoB 2 vs ROBINS-I, heterogeneity (I²/τ²/prediction interval), publication bias, full GRADE domains — also used by `storm-research`'s systematic-review path |
+| `references/literature-sources.md` | Any literature search, review, gap or duplication check, reference audit – which connector/skill for which task |
 | `references/measures-and-designs.md` | Case-control sampling schemes and what OR estimates, bias direction reasoning, survival analysis (PH assumption, time-varying covariates, competing risks) |

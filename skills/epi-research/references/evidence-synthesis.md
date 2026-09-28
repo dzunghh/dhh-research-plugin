@@ -88,6 +88,19 @@ true effect is probably at least as large as observed. This connects directly to
 `causal-identification.md`'s E-value: same logic, opposite direction of use). Report as a
 "Summary of Findings" table — one certainty rating per outcome, not one per study.
 
+## Source quotation (required)
+
+Every extracted estimate and every risk-of-bias judgement carries the sentence it came from, in
+the evidence-line format from `SKILL.md` (quote rule). Extraction tables add two columns:
+
+| Study | Outcome | Estimate (95% CI) | Quote (verbatim) | Location |
+|---|---|---|---|---|
+| Author year | … | HR 0.72 (0.60–0.86) | "…the exact sentence…" | Results, Table 2; full text |
+
+Elicit `thorough` screening records the quote behind each include/exclude decision – keep those
+quotes in the screening log. A cell with no retrievable quote is marked "not verified" and is
+excluded from pooling until checked against the full text.
+
 ## Reporting
 
 PRISMA — flow diagram (records identified → screened → included), structured methods
@@ -98,6 +111,8 @@ even for excluded-at-full-text studies with reasons.
 
 | Situation | Tool |
 |---|---|
+| Before writing the protocol | FastTrack `run_duplication_test` + `check_gap_saturation`; search PROSPERO |
+| Screening + extraction at scale | Elicit `create_systematic_review` (user chooses `depth`, `useFigures`) – see `literature-sources.md` |
 | RCTs in the meta-analysis | RoB 2 |
 | Cohort/case-control/other non-randomized in the meta-analysis | ROBINS-I — never RoB 2 |
 | Substantial I² with random-effects | Report prediction interval, investigate via pre-specified subgroup/meta-regression |
