@@ -16,7 +16,7 @@ jobs:
       - name: Find digest file
         id: digest
         run: |
-          FILE=$(git diff-tree --no-commit-id -r --name-only HEAD | grep 'cancer-epi-daily/.*\.md' | head -1)
+          FILE=$(git show --name-only --pretty=format: HEAD | grep 'cancer-epi-daily/.*\.md' | head -1)
           if [ -z "$FILE" ]; then
             echo "No digest file found in this push" && exit 1
           fi
