@@ -1,0 +1,38 @@
+name: Email Cancer Epi Digest
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'cancer-epi-daily/*.md'
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Find digest file
+        id: digest
+        run: |
+          FILE=$(git diff-tree --no-commit-id -r --name-only HEAD | grep 'cancer-epi-daily/.*\.md' | head -1)
+          if [ -z "$FILE" ]; then
+            echo "No digest file found in this push" && exit 1
+          fi
+          echo "file=$FILE" >> $GITHUB_OUTPUT
+          echo "date=$(basename "$FILE" .md)" >> $GITHUB_OUTPUT
+
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: dzungho.fsh@gmail.com
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          subject: "Cancer Epi Digest — ${{ steps.digest.outputs.date }}"
+          to: dzungho.fsh@gmail.com
+          from: "Cancer Epi Digest <dzungho.fsh@gmail.com>"
+          content_type: text/plain
+          body_path: ${{ steps.digest.outputs.file }}
