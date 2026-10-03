@@ -22,6 +22,9 @@ jobs:
           fi
           echo "file=$FILE" >> $GITHUB_OUTPUT
           echo "date=$(basename "$FILE" .md)" >> $GITHUB_OUTPUT
+          echo "content<<DIGESTEOF" >> $GITHUB_OUTPUT
+          cat "$FILE" >> $GITHUB_OUTPUT
+          echo "DIGESTEOF" >> $GITHUB_OUTPUT
 
       - name: Send email
         uses: dawidd6/action-send-mail@v3
@@ -34,5 +37,4 @@ jobs:
           subject: "Cancer Epi Digest — ${{ steps.digest.outputs.date }}"
           to: dzungho.fsh@gmail.com
           from: "Cancer Epi Digest <dzungho.fsh@gmail.com>"
-          content_type: text/plain
-          body_path: ${{ steps.digest.outputs.file }}
+          body: ${{ steps.digest.outputs.content }}
