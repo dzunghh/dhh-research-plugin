@@ -1,10 +1,11 @@
-name: Email Cancer Epi Digest
+name: Email Daily Digests
 
 on:
   push:
     branches: [master]
     paths:
       - 'cancer-epi-daily/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].md'
+      - 'causal-methods-daily/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].md'
 
 jobs:
   send-email:
@@ -18,12 +19,16 @@ jobs:
       - name: Find digest file
         id: digest
         run: |
-          FILE=$(git show --name-only --pretty=format: HEAD | grep -E 'cancer-epi-daily/[0-9]{4}-[0-9]{2}-[0-9]{2}\.md' | head -1)
+          FILE=$(git show --name-only --pretty=format: HEAD | grep -E '(cancer-epi|causal-methods)-daily/[0-9]{4}-[0-9]{2}-[0-9]{2}\.md' | head -1)
           if [ -z "$FILE" ]; then
             echo "No digest file found in this push" && exit 1
           fi
           echo "file=$FILE" >> $GITHUB_OUTPUT
           echo "date=$(basename "$FILE" .md)" >> $GITHUB_OUTPUT
+          case "$FILE" in
+            causal-methods-daily/*) echo "label=Causal Methods Digest" >> $GITHUB_OUTPUT ;;
+            *) echo "label=Cancer Epi Digest" >> $GITHUB_OUTPUT ;;
+          esac
           echo "content<<DIGESTEOF" >> $GITHUB_OUTPUT
           cat "$FILE" >> $GITHUB_OUTPUT
           echo "DIGESTEOF" >> $GITHUB_OUTPUT
@@ -36,8 +41,8 @@ jobs:
           secure: true
           username: dzungho.fsh@gmail.com
           password: ${{ secrets.GMAIL_APP_PASSWORD }}
-          subject: "Cancer Epi Digest — ${{ steps.digest.outputs.date }}"
+          subject: "${{ steps.digest.outputs.label }} — ${{ steps.digest.outputs.date }}"
           to: dzungho.fsh@gmail.com
-          from: "Cancer Epi Digest <dzungho.fsh@gmail.com>"
+          from: "${{ steps.digest.outputs.label }} <dzungho.fsh@gmail.com>"
           convert_markdown: true
           body: ${{ steps.digest.outputs.content }}
