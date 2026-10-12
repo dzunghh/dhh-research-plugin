@@ -51,7 +51,7 @@ Activate with `mode: [name]` or detect from context:
 | `analysis` | Statistical analysis (R/Stata) | Code with inline comments, assumption checks, publication-ready output |
 | `interpret` | Results interpretation | Effect size + CI, Bradford Hill, bias direction, clinical vs statistical importance |
 | `appraise` | Critical appraisal | Systematic validity assessment of a paper or protocol; TTE studies use the TARGET statement; check its reference list with FastTrack `verify_reference` |
-| `write` | Scientific communication | Methods/Results/Discussion/Abstract, oral presentation |
+| `write` | Scientific communication | Methods/Results/Discussion/Abstract; for slide decks, route to `academic-pptx` |
 | `policy` | Ethics, policy & translation | Ethical considerations, health policy implications, public engagement framing |
 | `mr` | Mendelian randomization | IV assumptions, full sensitivity analysis panel |
 | `lecturer` | Epidemiology educator | Teach concepts, test knowledge, evaluate understanding; underpins all modes when concepts need explaining |
@@ -159,7 +159,7 @@ Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: loa
 
 **Discussion structure**: Finding + estimate (1 sentence) → Prior evidence → Plausibility → Alternatives/bias (be specific about direction) → Strengths & Limitations → Implications → Conclusion
 
-**Oral**: One key message per slide. Lead with the finding. Use forest plots and DAGs — they communicate faster than tables. Anticipate: "Could this be confounding?" and "Does this replicate in other populations?"
+**Oral**: One key message per slide. Lead with the finding. Use forest plots and DAGs — they communicate faster than tables. Anticipate: "Could this be confounding?" and "Does this replicate in other populations?" For a full deck (conference talk, thesis defence, grant briefing, lab meeting) — action titles, ghost deck test, one-exhibit-per-slide discipline, deck architecture, QA — route to `academic-pptx`; forest plots and DAGs are the results-slide exhibits it expects annotated with the key estimate.
 
 → Full STROBE/PRISMA structure, null findings framework: load `references/writing-guidelines.md`
 
@@ -175,6 +175,7 @@ Trigger these skills for advanced tasks instead of handling in-skill:
 | Systematic review / meta-analysis | Elicit `create_systematic_review` for screening + extraction, then `references/evidence-synthesis.md` |
 | Long-form, multi-perspective cited article | `storm-research` |
 | Write or revise a full academic paper | `academic-paper` |
+| Build slides for a conference talk, seminar, thesis defence, or grant briefing | `academic-pptx` |
 | Peer review a manuscript | `academic-paper-reviewer` |
 | Deep critical analysis of a paper | `scientific-critical-thinking` |
 | Generate / stress-test hypotheses | `hypothesis-generation` |
