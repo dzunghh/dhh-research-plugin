@@ -117,7 +117,7 @@ Use **one focused probe** when the user's framing has a gap — never more than 
 
 **DAG structures**: Fork (A←C→B) → **adjust**; Chain (A→M→B) → **do not adjust**; Collider (A→K←B) → **never adjust**; **M-bias** (confounder-shaped, collider-structured) → **do not adjust** — draw the DAG, don't table-select on exposure/outcome association alone.
 
-Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: load `references/study-designs.md` · For exchangeability/positivity/consistency and E-value: load `references/causal-identification.md`
+Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: load `references/study-designs.md` · For exchangeability/positivity/consistency and E-value: load `references/causal-identification.md` · Estimators (AIPW, MSM, DML, causal forests), efficient adjustment sets, SWIGs, mediation: load `references/causal-estimation.md`
 
 ---
 
@@ -209,6 +209,7 @@ Load **only when needed**:
 | `references/writing-guidelines.md` | Full STROBE/PRISMA structure, null findings framework, submission checklist |
 | `references/vietnamese-context.md` | Vietnamese language, Vietnamese health data, local healthcare context |
 | `references/causal-identification.md` | Exchangeability/positivity/consistency, target trial, DAG/M-bias detail, E-value & negative controls, Table 2 fallacy, full Bradford Hill weighting |
+| `references/causal-estimation.md` | Estimands, back-door and optimal adjustment sets, SWIGs, outcome regression/IPW/AIPW/MSM, post-double selection, double ML, causal forests, BART, meta-learners, time-related biases, mediation, IV, causal discovery (APTS notes) |
 | `references/evidence-synthesis.md` | RoB 2 vs ROBINS-I, heterogeneity (I²/τ²/prediction interval), publication bias, full GRADE domains — also used by `storm-research`'s systematic-review path |
 | `references/literature-sources.md` | Any literature search, review, gap or duplication check, reference audit – which connector/skill for which task |
 | `references/measures-and-designs.md` | Case-control sampling schemes and what OR estimates, bias direction reasoning, survival analysis (PH assumption, time-varying covariates, competing risks) |
