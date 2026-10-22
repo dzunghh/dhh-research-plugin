@@ -222,3 +222,9 @@ epi.cohortsize(irr = 1.5, exp.p = 0.30, unexposed.p = 0.20,
 ```
 
 **For survival studies**: Power depends on **number of events**, not total sample size. Calculate events needed first, then derive required sample size and follow-up duration.
+
+## See also
+
+- Target trial emulation in depth (time zero, grace periods, clone–censor–weight, sequential nested trials, per-protocol vs ITT analogues): `time-varying-g-methods.md` §4
+- IV and Mendelian randomisation theory (homogeneity, monotonicity, weak instruments, LATE critique): `g-methods-point-treatment.md` Ch.16; MR lifetime-exposure caveat: `causal-graphs-pearl.md` §8
+- Transportability of trial results to a target population: `causal-graphs-pearl.md` §9

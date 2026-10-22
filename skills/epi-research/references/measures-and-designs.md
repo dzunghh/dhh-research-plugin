@@ -84,3 +84,9 @@ close to content-free.
 Bias direction and adjustment-set reasoning here connect to identifiability conditions in
 `causal-identification.md`; risk-of-bias tool selection for pooling multiple studies is in
 `evidence-synthesis.md`.
+
+## See also
+
+- Hazards of hazard ratios (time-varying HRs, built-in selection bias) and IPW/g-formula survival curves: `g-methods-point-treatment.md` Ch.17
+- Communicating absolute vs relative risk, expected frequencies, screening PPV: `statistical-reasoning.md` §2 and §12
+- Collider-induced paradoxes (birth-weight, Berkson): `causal-graphs-pearl.md` §6–7

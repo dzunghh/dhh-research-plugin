@@ -30,6 +30,42 @@
       "prompt": "I want to do a Mendelian randomization study to test whether BMI causally increases colorectal cancer risk using the UK Biobank. What genetic instruments should I use, and what sensitivity analyses do I absolutely need to report? I've found 97 genome-wide significant SNPs for BMI from the GIANT consortium.",
       "expected_output": "Guidance on clumping SNPs (r²<0.001), checking F-statistics (>10, ideally >50), two-sample MR setup with TwoSampleMR package, all required sensitivity analyses (IVW main, MR-Egger+intercept test, weighted median, weighted mode, MR-PRESSO), funnel plot, leave-one-out, Steiger filtering for causal direction, STROBE-MR reporting, caveats about UK Biobank (European ancestry, healthy volunteer bias).",
       "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "A confounder (smoking status) is unmeasured in my cohort of statin use and dementia, but I have a mediator, LDL reduction, that is measured. Is there any way to identify the effect?",
+      "expected_output": "Explains front-door criterion (Pearl Ch.7, causal-graphs-pearl.md): conditions (M shielded from U, carries all of X's effect, X blocks M–Y back doors), front-door formula, why statin–dementia likely violates them (pleiotropic non-LDL pathways), alternatives (IV/MR, negative controls, E-value), probing question about shielded mediator.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "I'm analysing HIV cohort data: CD4 count drives ART initiation, and ART raises later CD4. Can I just include time-updated CD4 in a Cox model to estimate the effect of ART on mortality?",
+      "expected_output": "Identifies treatment-confounder feedback; explains collider bias from conditioning on L_k even under the null (H&R Ch.20, Table 20.1 logic); recommends g-methods (IPW-MSM with stabilised time-varying weights, parametric g-formula, LTMLE); notes hazards-of-HRs issue and reporting risk curves; R: ipw/WeightIt, gfoRmula, ltmle; loads time-varying-g-methods.md.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "I'm emulating a target trial of starting metformin within 6 months of diabetes diagnosis vs not. Some people start at month 4. How do I handle the grace period without immortal time bias?",
+      "expected_output": "Clone–censor–weight (H&R FP 22.1): clone each person into both arms, censor clones at deviation, IP-weight for informative artificial censoring, events in the grace period count in both arms; ITT not estimable with cloning; aligned time zero; bootstrap CIs; TrialEmulation package; loads time-varying-g-methods.md.",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "My result was p = 0.03, so there is a 97% chance the treatment works, right? And the 95% CI 1.02–1.60 means a 95% probability the true HR is in that range?",
+      "expected_output": "Corrects both misreadings (Spiegelhalter Ch.10; H&R §10.1): p-value is P(data this extreme | null), not P(null); frequentist CI is not a probability statement about the parameter; mentions ASA principles, false-discovery logic, prior plausibility/Bayes factor; recommends reporting effect size and CI; loads statistical-reasoning.md.",
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "A newspaper says eating processed meat daily raises bowel-cancer risk by 18%. How should I explain this to patients?",
+      "expected_output": "Converts relative to absolute risk (Spiegelhalter Ch.1): ~6 in 100 to ~7 in 100 lifetime, about 1 extra case per ~100 daily eaters; expected frequencies, icon arrays, positive and negative framing; notes observational evidence and confounding; loads statistical-reasoning.md.",
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "I have 15% missing BMI in my logistic regression of BMI on post-operative complications. Using finalfit, how do I decide whether complete-case analysis is OK or I need multiple imputation?",
+      "expected_output": "HealthyR Ch.11 workflow: ff_glimpse, missing_plot, missing_pattern, missing_compare to assess MCAR vs MAR; MAR → multiple imputation with mice (include outcome in imputation model, pool with Rubin's rules), MNAR → sensitivity analysis; report missingness in Table 1; loads statistical-methods.md.",
+      "files": []
     }
   ]
 }

@@ -295,3 +295,11 @@ When preparing hypothesis-driven research for publication, consult the **venue-t
 - Venue-specific guides for Nature/Science, Cell Press, medical journals, and ML/CS conferences
 - `reviewer_expectations.md` - What reviewers look for when evaluating research hypotheses
 
+
+## Epidemiology, causal and statistical questions
+
+For health-research questions, load the matching reference from the `epi-research` skill (`C:/Users/admin/.claude/skills/epi-research/references/`) before answering, and apply it alongside this skill:
+
+- Draw the causal model and check identifiability before proposing data collection – `causal-graphs-pearl.md` §3 and §11
+- Mediation and mechanism hypotheses (CDE vs natural effects) – `counterfactuals-mediation.md`
+- Turn a causal hypothesis into a target-trial protocol – `time-varying-g-methods.md` §4

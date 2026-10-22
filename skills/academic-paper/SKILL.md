@@ -520,3 +520,11 @@ academic-paper + academic-paper-reviewer -> Peer review -> revision loop
 | 2.1 | 2026-03 | Added CRediT authorship guide, funding statement guide, 2 new templates (credit_statement_template, funding_statement_template); enhanced intake_agent with co-author + funding questions (Step 9-10); enhanced formatter_agent with CRediT + funding quality checks |
 | 2.0 | 2026-02 | NEW plan mode (Socratic guided chapter-by-chapter planning), deep-research handoff protocol, Chinese APA 7.0 citation guide, failure path handling, mode selection guide |
 | 1.0 | 2026-01 | Initial release: 9-agent pipeline, 6 paper types, 5 citation formats, bilingual abstracts, multi-format output |
+
+## Epidemiology, causal and statistical questions
+
+For health-research questions, load the matching reference from the `epi-research` skill (`C:/Users/admin/.claude/skills/epi-research/references/`) before answering, and apply it alongside this skill:
+
+- Methods wording for causal analyses (estimand, identification conditions, g-methods) – `causal-identification.md`, `time-varying-g-methods.md` §4
+- Reporting risk (absolute and relative), uncertainty and p-values correctly – `statistical-reasoning.md` §2, §8 and §11
+- STROBE/PRISMA structure and null findings – `writing-guidelines.md`

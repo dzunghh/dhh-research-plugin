@@ -80,8 +80,10 @@ Three interaction patterns — detected from context:
 | 1 – Foundations | Measures of occurrence (incidence, prevalence, rates); measures of association (RR, OR, HR, RD, NNT) |
 | 2 – Designs | Study design tradeoffs; selection and information bias taxonomy; confounding |
 | 3 – Causal inference | DAGs; backdoor criterion; collider/mediator/confounder; effect modification vs interaction |
-| 4 – Analysis | Survival analysis concepts; competing risks; multiple imputation; propensity score logic |
-| 5 – Advanced | Meta-analysis and GRADE; Mendelian randomization; target trial emulation |
+| 4 – Analysis | Survival analysis concepts; competing risks; multiple imputation; propensity score logic; p-values, intervals, bootstrap, Bayes and likelihood ratios (`statistical-reasoning.md`) |
+| 5 – Advanced | Meta-analysis and GRADE; Mendelian randomization; target trial emulation; g-methods (IPW, g-formula, g-estimation); front-door and do-calculus; mediation (CDE vs natural effects) |
+
+**Misconception banks** for Teach/Quiz: `g-methods-point-treatment.md`, `time-varying-g-methods.md`, `causal-graphs-pearl.md` and `statistical-reasoning.md` each end with a numbered misconceptions list – draw quiz items from there.
 
 ---
 
@@ -93,9 +95,9 @@ Use **one focused probe** when the user's framing has a gap — never more than 
 
 **Design**: "How are you handling time-varying exposure?" · "What's your source population?" · "What controls for [specific confounder]?"
 
-**Causal**: "Have you drawn the DAG? What are the open backdoor paths?" · "Could [X] be a collider?" · "Is [M] a mediator you'd be blocking by adjusting?"
+**Causal**: "Have you drawn the DAG? What are the open backdoor paths?" · "Could [X] be a collider?" · "Is [M] a mediator you'd be blocking by adjusting?" · "Does any confounder also respond to earlier treatment?" (→ g-methods) · "If the confounder is unmeasured, is there a shielded mediator (front door) or an instrument?"
 
-**Interpretation**: "What's the most plausible alternative explanation?" · "Does the CI width matter clinically?" · "Does this satisfy Bradford Hill temporality?"
+**Interpretation**: "What's the most plausible alternative explanation?" · "Does the CI width matter clinically?" · "Does this satisfy Bradford Hill temporality?" · "What is the absolute risk, not just the relative risk?" · "Could this be regression to the mean?"
 
 **Appraisal**: "What's the biggest internal validity threat?" · "Could the null result be due to exposure misclassification?" · "Is this population representative of your target?"
 
@@ -117,7 +119,7 @@ Use **one focused probe** when the user's framing has a gap — never more than 
 
 **DAG structures**: Fork (A←C→B) → **adjust**; Chain (A→M→B) → **do not adjust**; Collider (A→K←B) → **never adjust**; **M-bias** (confounder-shaped, collider-structured) → **do not adjust** — draw the DAG, don't table-select on exposure/outcome association alone.
 
-Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: load `references/study-designs.md` · For exchangeability/positivity/consistency and E-value: load `references/causal-identification.md` · Estimators (AIPW, MSM, DML, causal forests), efficient adjustment sets, SWIGs, mediation: load `references/causal-estimation.md`
+Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: load `references/study-designs.md` · For exchangeability/positivity/consistency and E-value: load `references/causal-identification.md` · Efficient adjustment sets, SWIGs, AIPW, DML, causal forests, meta-learners: load `references/causal-estimation.md` · IPW/g-formula/g-estimation/IV/causal survival worked algorithms: `references/g-methods-point-treatment.md` · Time-varying treatment, treatment-confounder feedback, target trial emulation details (grace periods, clone–censor–weight): `references/time-varying-g-methods.md` · Front-door, do-calculus, paradoxes, transportability: `references/causal-graphs-pearl.md` · Mediation and attribution: `references/counterfactuals-mediation.md`
 
 ---
 
@@ -139,7 +141,7 @@ Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: loa
 | Propensity score | `MatchIt`, `WeightIt` |
 | DAG | `ggdag`, `dagitty` |
 
-→ Full code templates (Cox, Fine-Gray, MR, MI, PSM): load `references/statistical-methods.md`
+→ Full code templates (Cox, Fine-Gray, MR, MI, PSM) and the finalfit/HealthyR workflow (modelling strategy, missing-data checks, reporting): load `references/statistical-methods.md` · Interpreting and communicating uncertainty and risk (p-values, CIs, absolute vs relative risk, screening, prediction-model evaluation): `references/statistical-reasoning.md`
 
 ---
 
@@ -167,21 +169,21 @@ Tools: dagitty.net · `ggdag` R package · For DAG examples and sample size: loa
 
 ## Skill Routing
 
-Trigger these skills for advanced tasks instead of handling in-skill:
+Trigger these skills for advanced tasks instead of handling in-skill. When handing over an epidemiology, causal or statistics question, name the listed reference file(s) so the routed skill loads them (all in `C:/Users/admin/.claude/skills/epi-research/references/`):
 
 | Task | Skill |
 |------|-------|
 | Find sources, summarise evidence, check a gap | Consensus / PubMed / FastTrack / Elicit connectors, `notebooklm` for attached sources – route by task in `references/literature-sources.md` |
 | Systematic review / meta-analysis | Elicit `create_systematic_review` for screening + extraction, then `references/evidence-synthesis.md` |
 | Long-form, multi-perspective cited article | `storm-research` |
-| Write or revise a full academic paper | `academic-paper` |
+| Write or revise a full academic paper | `academic-paper` – hand over `writing-guidelines.md`, plus `statistical-reasoning.md` §2 and §11 for risk and p-value wording |
 | Build slides for a conference talk, seminar, thesis defence, or grant briefing | `academic-pptx` |
-| Peer review a manuscript | `academic-paper-reviewer` |
-| Deep critical analysis of a paper | `scientific-critical-thinking` |
-| Generate / stress-test hypotheses | `hypothesis-generation` |
-| Research grant writing | `research-grants` |
-| Advanced statistical modelling | `statistical-analysis` |
-| EDA and data visualization | `exploratory-data-analysis`, `scientific-visualization` |
+| Peer review a manuscript | `academic-paper-reviewer` – hand over `causal-identification.md`, `time-varying-g-methods.md` §6 and `statistical-reasoning.md` §13 |
+| Deep critical analysis of a paper | `scientific-critical-thinking` – hand over `causal-graphs-pearl.md` and `statistical-reasoning.md` |
+| Generate / stress-test hypotheses | `hypothesis-generation` – hand over `causal-graphs-pearl.md` §3 and §11 (identify before collecting data) |
+| Research grant writing | `research-grants` – hand over `time-varying-g-methods.md` §4 (target-trial protocol) and `study-designs.md` |
+| Advanced statistical modelling | `statistical-analysis` – hand over `statistical-methods.md`, `g-methods-point-treatment.md` and `statistical-reasoning.md` |
+| EDA and data visualization | `exploratory-data-analysis`, `scientific-visualization` – hand over `statistical-reasoning.md` §3 and the missing-data section of `statistical-methods.md` |
 | Advanced R workflows | `rlang-patterns`, `r-package-development` |
 
 ---
@@ -206,11 +208,16 @@ Load **only when needed**:
 | File | Load when… |
 |------|-----------|
 | `references/study-designs.md` | Detailed design guidance, DAG examples, MR assumptions, TTE protocol components, TARGET statement, competing risks, GRADE table, sample size |
-| `references/statistical-methods.md` | Full code templates: Cox, Fine-Gray, meta-analysis, MR, imputation, PSM, E-value |
+| `references/statistical-methods.md` | Full code templates: Cox, Fine-Gray, meta-analysis, MR, imputation, PSM, E-value; HealthyR/finalfit workflow (modelling strategy, diagnostics, missing-data diagnostics MCAR/MAR/MNAR and imputation, reporting) |
 | `references/writing-guidelines.md` | Full STROBE/PRISMA structure, null findings framework, submission checklist |
 | `references/vietnamese-context.md` | Vietnamese language, Vietnamese health data, local healthcare context |
-| `references/causal-identification.md` | Exchangeability/positivity/consistency, target trial, DAG/M-bias detail, E-value & negative controls, Table 2 fallacy, full Bradford Hill weighting |
-| `references/causal-estimation.md` | Estimands, back-door and optimal adjustment sets, SWIGs, outcome regression/IPW/AIPW/MSM, post-double selection, double ML, causal forests, BART, meta-learners, time-related biases, mediation, IV, causal discovery (APTS notes) |
+| `references/causal-identification.md` | Exchangeability/positivity/consistency, target trial, DAG/M-bias detail, E-value & negative controls, Table 2 fallacy, full Bradford Hill weighting, measurement bias and random variability (H&R Ch.9–10) |
+| `references/causal-estimation.md` | APTS notes: estimands (ATE/ATT/ATC/CATE, shift effects), valid and optimal (O-set) adjustment, forbidden projection, SWIGs, AIPW, post-double selection, double ML, causal forests, BART, meta-learners incl. DR-learner, 401(k) example |
+| `references/g-methods-point-treatment.md` | H&R Part II: why model, IPW with stabilised/censoring weights, MSMs, parametric g-formula, doubly robust, g-estimation of SNMs, PS stratification/matching, IV (homogeneity, monotonicity, weak instruments), causal survival (hazards of HRs, pooled logistic, IPW/g-formula curves), variable selection and ML |
+| `references/time-varying-g-methods.md` | H&R Part III: static vs dynamic strategies, sequential exchangeability, treatment-confounder feedback, g-formula (Monte Carlo/ICE), time-varying IPW, LTMLE, SNMM g-estimation, target trial emulation (time zero, grace periods, clone–censor–weight, per-protocol vs ITT analogues), software |
+| `references/causal-graphs-pearl.md` | Pearl: ladder of causation, inference engine, history, d-separation, confounding games, Cornfield's inequality, Simpson/Berkson/Lord/Monty Hall, front-door, do-calculus, IV, transportability |
+| `references/counterfactuals-mediation.md` | Mediation estimands across sources (CDE, NDE/NIE, principal strata, separable), mediation formula, Mediation Fallacy, SCM counterfactuals, PN/PS, attribution, ETT |
+| `references/statistical-reasoning.md` | Spiegelhalter: PPDAC, risk communication, summarising, sampling, regression to the mean, prediction-model evaluation, intervals and bootstrap, probability, p-values, Bayes, research integrity, glossary, misconceptions |
 | `references/evidence-synthesis.md` | RoB 2 vs ROBINS-I, heterogeneity (I²/τ²/prediction interval), publication bias, full GRADE domains — also used by `storm-research`'s systematic-review path |
 | `references/literature-sources.md` | Any literature search, review, gap or duplication check, reference audit – which connector/skill for which task |
 | `references/measures-and-designs.md` | Case-control sampling schemes and what OR estimates, bias direction reasoning, survival analysis (PH assumption, time-varying covariates, competing risks) |

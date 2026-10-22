@@ -568,3 +568,12 @@ This skill includes comprehensive reference materials that provide detailed fram
 4. Suggest improvements for future work
 5. Advance scientific understanding
 
+
+## Epidemiology, causal and statistical questions
+
+For health-research questions, load the matching reference from the `epi-research` skill (`C:/Users/admin/.claude/skills/epi-research/references/`) before answering, and apply it alongside this skill:
+
+- Confounding, colliders, paradoxes, front-door and transportability – `causal-graphs-pearl.md`
+- Identification conditions, measurement bias, E-values, Bradford Hill weighting – `causal-identification.md`
+- Time-related biases (immortal time, prevalent users, naive per-protocol) – `time-varying-g-methods.md` §4 and §6
+- p-value misuse, regression to the mean, publication bias and questionable research practices – `statistical-reasoning.md` §5, §11 and §13

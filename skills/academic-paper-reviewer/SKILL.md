@@ -484,3 +484,11 @@ Follows the paper's language. Academic terms remain in English. User can overrid
 | 1.2 | 2026-03 | Added statistical reporting standards reference; enhanced methodology_reviewer_agent with statistical reporting adequacy sub-step |
 | 1.1 | 2026-02 | Added Devil's Advocate Reviewer (7th agent), added re-review mode, expanded review team from 4 to 5 |
 | 1.0 | 2026-02 | Initial version: 6 agents, 4 modes, 3-phase workflow |
+
+## Epidemiology, causal and statistical questions
+
+For health-research questions, load the matching reference from the `epi-research` skill (`C:/Users/admin/.claude/skills/epi-research/references/`) before answering, and apply it alongside this skill:
+
+- Causal-claim checks: identification conditions, adjustment-set errors (M-bias, mediator adjustment, Table 2 fallacy) – `causal-identification.md`, `causal-graphs-pearl.md` §5
+- Time-varying confounding, immortal time and naive per-protocol analyses – `time-varying-g-methods.md` §2, §4 and §6
+- Statistical-misuse checks: p-values, multiple testing, overfitting, relative-risk-only reporting – `statistical-reasoning.md` §7, §11 and §13

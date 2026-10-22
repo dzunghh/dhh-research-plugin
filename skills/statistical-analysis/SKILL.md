@@ -628,3 +628,12 @@ For questions about:
 - APA Style Guide: https://apastyle.apa.org/
 - Statistical Consulting: Cross Validated (stats.stackexchange.com)
 
+
+## Epidemiology, causal and statistical questions
+
+For health-research questions, load the matching reference from the `epi-research` skill (`C:/Users/admin/.claude/skills/epi-research/references/`) before answering, and apply it alongside this skill:
+
+- Code templates and HealthyR/finalfit modelling strategy, diagnostics and missing data – `statistical-methods.md`
+- Interpreting p-values, intervals, Bayes, multiple testing and prediction-model evaluation – `statistical-reasoning.md`
+- Causal effect estimation: IPW, g-formula, g-estimation, IV, causal survival – `g-methods-point-treatment.md`; time-varying treatments – `time-varying-g-methods.md`; adjustment sets and ML estimators (AIPW, DML, causal forests) – `causal-estimation.md`
+- Never present a regression coefficient as a causal effect without naming the identification conditions (`causal-identification.md`).

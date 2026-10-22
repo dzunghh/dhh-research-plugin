@@ -953,3 +953,10 @@ Load these references as needed when working on specific aspects of grant writin
 **Final Note**: Grant writing is both an art and a science. Success requires not only excellent research ideas but also clear communication, strategic positioning, and meticulous attention to detail. Start early, seek feedback, and remember that even the best researchers face rejection—persistence and revision are key to funding success.
 
 
+
+## Epidemiology, causal and statistical questions
+
+For health-research questions, load the matching reference from the `epi-research` skill (`C:/Users/admin/.claude/skills/epi-research/references/`) before answering, and apply it alongside this skill:
+
+- Target-trial protocol components, time zero and grace periods for the analysis plan – `time-varying-g-methods.md` §4
+- Design and sample size – `study-designs.md`; estimator choice – `g-methods-point-treatment.md`, `causal-estimation.md`

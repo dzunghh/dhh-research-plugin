@@ -149,6 +149,53 @@ informative. Treat the full list as an aid to structured judgement, not a scorin
 that have "checked the boxes" have shown only chance-level agreement between epidemiologists in
 practice (Modern Epi 4e, citing case-study surveys).
 
+## Time-varying treatments – where to go next
+
+For sustained or time-varying treatments the three conditions become *sequential* exchangeability,
+positivity and consistency, conditioning on past treatment and covariate history at every time point,
+and conventional adjustment fails under treatment-confounder feedback (H&R Ch.19–20). Full treatment,
+g-methods and target-trial details (grace periods, clone–censor–weight): `time-varying-g-methods.md`.
+Point-treatment estimators (IPW, g-formula, g-estimation, IV, survival): `g-methods-point-treatment.md`.
+Graphical identification beyond the back-door (front-door, do-calculus, ladder of causation, paradoxes):
+`causal-graphs-pearl.md`. Counterfactuals, attribution (PN/PS) and mediation: `counterfactuals-mediation.md`.
+
+## Measurement bias and random variability (H&R Ch.9–10)
+
+### Measurement bias (Ch.9)
+- **Measurement (information) bias** happens when the A*–Y* association differs from the A–Y causal effect because of how data were measured. It can occur in any design, randomised trials included (H&R §9.1). Exchangeability, positivity and consistency are not enough once variables are mismeasured (H&R §9.1).
+- **Four structures** (H&R §9.2; TP 9.1):
+  - Errors U_A and U_Y can be **independent or dependent**. Dependence arises from a shared cause, e.g. recall ability in a phone interview.
+  - Each error can be **non-differential or differential**. In outcome-affects-A* differential error you get recall bias, or "reverse-causation bias" when drug levels are measured after toxicity. In treatment-affects-Y* differential error you get closer monitoring of treated patients.
+- **Direction** (FP 9.1). The only safe case is under the null with independent non-differential error. Otherwise the bias can go either way, and for non-binary A the trend can even reverse when E[A* | A] is non-monotone. Size grows with the strength of A → A*.
+- **Mismeasured confounders** (H&R §9.3):
+  - L* cannot fully block backdoor paths. This is effectively residual or unmeasured confounding, with L* as a surrogate.
+  - Error that differs across strata of L* can create **spurious effect modification** (H&R §9.3).
+  - A mismeasured collider still induces selection bias when you condition on it (H&R §9.3).
+- **ITT effect** (H&R §9.4):
+  - Assignment Z is a "misclassified" version of received A, but unlike A* it can have its own effect via Z → Y. Blinding is used to remove that path (the exclusion restriction, TP 9.2).
+  - The ITT effect depends on adherence *and* behavioural change.
+- **Per-protocol effect** (H&R §9.5; FP 9.2):
+  - It needs adjustment for prognostic factors that drive adherence. Naive *as-treated* and *per-protocol* analyses are observational analyses of a trial.
+  - **Three problems with "the ITT is conservative"**:
+    1. It needs monotone effects.
+    2. It is not conservative in head-to-head trials, where poorer adherence to a cheap drug can make it look worse.
+    3. It is dangerous for safety and non-inferiority questions.
+  - The ITT is null-preserving **only if** the exclusion restriction holds (H&R §9.5).
+  - Choosing ITT over per-protocol is choosing misclassification bias over potential confounding, and that choice needs justifying (H&R §9.5).
+
+### Random variability (Ch.10)
+- **Identification vs estimation** (H&R §10.1). Identification asks whether the data could give the causal effect with infinite sample size. Estimation deals with finite samples:
+  - Consistent estimators.
+  - 95% Wald CIs, which are *calibrated* if coverage is about 95% and *conservative* if higher. CIs are large-sample. **Honest (uniform) CIs** guarantee coverage beyond some n, though that n is usually unknown (H&R §10.1 and its TP).
+  - A frequentist CI is not "95% probability the parameter is inside"; that is the Bayesian credible-interval reading (H&R §10.1 margin).
+- **Estimation of causal effects** (H&R §10.2). Even with randomisation, chance imbalance in a finite sample means association is not exactly causation. CIs quantify this.
+- **The super-population myth** (H&R §10.3). Most analyses implicitly treat the study population as a random sample from a near-infinite super-population. This is often fiction, but convenient. Inference about the *study* population needs different, randomisation-based variance, and the answer depends on whether counterfactuals are deterministic.
+- **The conditionality "principle"** (H&R §10.4). Conditioning on chance covariate imbalances in an RCT, i.e. adjusting for baseline L even though randomised, can be more informative than the unconditional analysis. The book discusses the tension between the conditional and unconditional views.
+- **The curse of dimensionality** (H&R §10.5). With many confounders, nonparametric stratification leaves empty strata. That forces modelling (Part II) and with it model misspecification as a new source of bias.
+- Relevance to Part III: the 2^K strategy space is the curse of dimensionality taken to its extreme. It is why MSMs, SNMMs and the parametric g-formula are unavoidable (H&R §20.4, §21.2).
+
+---
+
 ## What to actually say to the user
 
 When a user asks for a causal analysis:
