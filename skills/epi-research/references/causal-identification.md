@@ -196,6 +196,23 @@ Graphical identification beyond the back-door (front-door, do-calculus, ladder o
 
 ---
 
+## Where the sources disagree – take a position
+
+The reference set draws on Hernán & Robins (H&R), Pearl, Spiegelhalter, HealthyR, APTS and *Modern
+Epidemiology*. Where they conflict, use the default in the right-hand column:
+
+| Issue | Positions | Skill default |
+|---|---|---|
+| What is a confounder | "Associated with both" (Spiegelhalter Ch.4; HealthyR §7) vs a structural definition (Pearl Ch.4; H&R Ch.7, §18.2) | Structural – decide from the DAG; "associated with both" misclassifies colliders (M-bias) and mediators |
+| Covariate selection | AIC, c-statistic, >10% change-in-estimate (HealthyR §7, §9) vs rejected for causal questions (Pearl Ch.4; H&R §15.5, §18) | For causal questions use DAG-based selection with the optimal set (`causal-estimation.md`); keep predictive selection for prediction models |
+| Bradford Hill | Historical summary with no weighing method (Pearl Ch.5) vs constructive aid (Spiegelhalter Ch.4) | Weighted viewpoints as above (*Modern Epidemiology* 4e) – temporality is necessary, the rest aid judgement |
+| Natural direct/indirect effects | Estimable via the mediation formula (Pearl Ch.9) vs not identifiable by any experiment (H&R TP 22.2; APTS Ch.7) | Report them only with the cross-world assumption stated; prefer the CDE or interventional effects (`counterfactuals-mediation.md`) |
+| Berkeley-type stratifiers | Treated as a confounder (Spiegelhalter Ch.4) vs a mediator, possibly a collider (Pearl Ch.6, 9) | Decide the role from the DAG before stratifying |
+| ITT | Core pragmatic principle (Spiegelhalter Ch.4) vs not reliably conservative, and a pseudo-ITT under differential loss to follow-up (H&R §9.5, §22.5) | Report ITT and an adjusted per-protocol effect; IPCW where loss to follow-up is differential |
+| Hazard ratio as the headline | Cox HR (HealthyR §10) vs built-in selection bias (H&R FP 17.2) | Give adjusted risk/survival curves and risk differences at fixed times; an HR may be secondary |
+| IV / MR | Favourable (Pearl Ch.7; Spiegelhalter Ch.4) vs sceptical: weak instruments, LATE relevance (H&R Ch.16) | Use IV for triangulation; state the homogeneity or monotonicity assumption and the first-stage strength |
+| Imputing the outcome | Don't (HealthyR §11) vs include it as a predictor (White, Royston & Wood 2011) | Include the outcome as a predictor in the imputation model (`statistical-methods.md`) |
+
 ## What to actually say to the user
 
 When a user asks for a causal analysis:
