@@ -12,7 +12,7 @@ license: Proprietary. LICENSE.txt has complete terms
 - Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user
 
 ### Zero Formula Errors
-- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)
+- Every Excel model MUST be delivered with ZERO formula errors (`#REF!`, `#DIV/0!`, `#VALUE!`, `#N/A`, `#NAME?`)
 
 ### Preserve Existing Templates (when updating templates)
 - Study and EXACTLY match existing format, style, and conventions when modifying files
@@ -220,7 +220,7 @@ python scripts/recalc.py output.xlsx 30
 The script:
 - Automatically sets up LibreOffice macro on first run
 - Recalculates all formulas in all sheets
-- Scans ALL cells for Excel errors (#REF!, #DIV/0!, etc.)
+- Scans ALL cells for Excel errors (`#REF!`, `#DIV/0!`, etc.)
 - Returns JSON with detailed error locations and counts
 - Works on both Linux and macOS
 

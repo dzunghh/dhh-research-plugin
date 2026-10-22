@@ -1,7 +1,6 @@
 ---
 name: high-impact-copy
 description: Craft persuasive copy using proven frameworks, conversion triggers, and platform-optimized messaging
-tags: [copywriting, conversion, persuasion, marketing]
 version: 1.0.0
 ---
 
