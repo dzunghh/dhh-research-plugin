@@ -8,6 +8,7 @@ Hub note for the **causal inference & biostatistics methods daily digest** — a
 
 ## All digests (newest first)
 
+- [[2026-11-05]]
 - [[2026-11-04]]
 - [[2026-11-03]]
 - [[2026-11-02]]
