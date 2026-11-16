@@ -1,0 +1,23 @@
+data,n
+database_results,1200
+database_specific_results,"MEDLINE (Ovid), 520; Embase (Ovid), 610; CENTRAL, 70"
+register_results,85
+register_specific_results,"ClinicalTrials.gov, 60; WHO ICTRP, 25"
+duplicates,310
+excluded_automatic,0
+excluded_other,0
+records_screened,975
+records_excluded,890
+dbr_sought_reports,85
+dbr_notretrieved_reports,5
+dbr_assessed,80
+dbr_excluded,"Wrong population, 30; Wrong comparator, 22; Not an RCT, 20"
+citations_results,12
+other_sought_reports,12
+other_notretrieved_reports,0
+other_assessed,12
+other_excluded,"Not an RCT, 12"
+new_studies,6
+new_reports,8
+total_studies,6
+total_reports,8

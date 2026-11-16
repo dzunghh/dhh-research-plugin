@@ -86,28 +86,31 @@ cox_strat <- coxph(surv_obj ~ exposure + age + strata(sex), data = data_an)
 When treated patients must survive to receive treatment, naive coding inflates the apparent benefit. Fix: split each treated patient into two rows — unexposed before treatment, exposed after.
 
 ```r
-# Create pre/post-treatment intervals
-data_tv <- data_an |>
-  # Calculate time from diagnosis to treatment and to end
+# One row per patient: follow-up time, time to treatment, death indicator
+base <- data_an |>
   mutate(
-    follow_up = as.numeric(if_else(!is.na(death_date), death_date, censor_date) - diagnosis_date),
-    time_to_tx = as.numeric(treatment_date - diagnosis_date),
-    event = as.integer(!is.na(death_date))
-  )
+    follow_up  = as.numeric(coalesce(death_date, censor_date) - diagnosis_date),
+    time_to_tx = as.numeric(treatment_date - diagnosis_date),  # NA = never treated
+    died       = as.integer(!is.na(death_date))
+  ) |>
+  filter(follow_up > 0)                       # tmerge needs positive follow-up
 
-# Build counting-process dataset
-tv_rows <- bind_rows(
-  # Pre-treatment interval: unexposed
-  data_tv |> mutate(tstart = 0, tstop = coalesce(time_to_tx, follow_up),
-                    tx = 0),
-  # Post-treatment interval: exposed (treated patients only)
-  data_tv |> filter(!is.na(time_to_tx)) |>
-    mutate(tstart = time_to_tx, tstop = follow_up, tx = 1)
-) |> arrange(id, tstart)
+# tmerge() splits follow-up at treatment and attaches the death to the LAST
+# interval only. Do not build the rows by hand with bind_rows(): copying the
+# event onto the pre-treatment row counts a treated patient's death twice.
+tv_rows <- tmerge(base, base, id = id,
+                  death = event(follow_up, died),
+                  tx    = tdc(time_to_tx))    # 0 before treatment, 1 from treatment on
 
-# Fit model — cluster for multiple rows per patient
-cox_tv <- coxph(Surv(tstart, tstop, event) ~ tx + age + sex + stage,
+# Check: each death counted once, and person-time conserved
+stopifnot(sum(tv_rows$death) == sum(base$died),
+          sum(tv_rows$tstop - tv_rows$tstart) == sum(base$follow_up))
+
+# Fit model – cluster for multiple rows per patient
+cox_tv <- coxph(Surv(tstart, tstop, death) ~ tx + age + sex + stage,
                 data = tv_rows, cluster = id)
+# Treatment on day 0 is exposed from the start. For a fixed horizon
+# (e.g. 5 years), truncate follow_up and died at the horizon first.
 ```
 
 ### Competing Risks

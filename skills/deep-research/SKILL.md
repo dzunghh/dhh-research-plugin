@@ -1,6 +1,6 @@
 ---
 name: deep-research
-description: "Universal deep research agent team. 13-agent pipeline for rigorous academic research on any topic. 7 modes: full research, quick brief, paper review, lit-review, fact-check, Socratic guided research dialogue, and systematic review with optional meta-analysis. Covers research question formulation, Socratic mentoring, methodology design, systematic literature search, source verification, cross-source synthesis, risk of bias assessment, meta-analysis, APA 7.0 report compilation, editorial review, devil's advocate challenges, ethics review, and post-research literature monitoring. Triggers on: research, deep research, literature review, systematic review, meta-analysis, PRISMA, evidence synthesis, fact-check, guide my research, help me think through, 研究, 深度研究, 文獻回顧, 文獻探討, 系統性回顧, 後設分析, 事實查核, 引導我的研究, 幫我釐清, 幫我想想, 我不確定要研究什麼, 研究方向, 研究主題."
+description: "Use when a question needs rigorous multi-source research with verified sources and a written report – full research, quick brief, paper review, literature review, fact-check, or Socratic guidance on choosing a research direction. Triggers: research, deep research, literature review, evidence synthesis, fact-check, guide my research, help me think through. For a systematic review or meta-analysis use srma."
 metadata:
   version: "2.4"
   last_updated: "2026-03-27"
@@ -315,6 +315,8 @@ User: "Guide my research on [topic]"
 ---
 
 ## Systematic Review Mode
+
+> **Health and epidemiology reviews:** use the `srma` skill instead – it is the maintained source for protocol, search, risk of bias, pooling, GRADE and PRISMA 2020.
 
 Full PRISMA-compliant systematic literature review with optional meta-analysis. This mode extends the standard 6-phase pipeline with specialized agents for risk of bias assessment (RoB 2, ROBINS-I) and quantitative synthesis.
 

@@ -25,7 +25,7 @@
 
 **Control selection**: Apply the "would-have-been-a-case" test — control should have been a case if they had developed the outcome.
 
-**OR ≈ RR**: Only valid when outcome prevalence <10% in source population. For common outcomes, OR overestimates RR — state this explicitly.
+**OR vs RR**: depends on how controls were sampled. Density sampling → OR estimates the rate ratio exactly; case-cohort → the risk ratio exactly; only cumulative (end-of-follow-up) sampling needs the rare-outcome assumption, and there a common outcome makes the OR overstate the RR. Detail: `measures-and-designs.md`.
 
 ---
 

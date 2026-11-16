@@ -1,6 +1,6 @@
 ---
 name: academic-paper
-description: "Academic paper writing skill with 12-agent pipeline. v2.5: Style Calibration (learn author's writing voice from past papers) + Writing Quality Check (writing quality checklist for natural prose). Supports IMRaD, literature review, theoretical, case study, policy brief, and conference paper structures. APA 7.0 (default), Chicago, MLA, IEEE, Vancouver citation formats. Bilingual abstracts (zh-TW + EN). Multi-format output (LaTeX, DOCX, PDF, Markdown). Triggers on: write paper, academic paper, paper outline, write abstract, revise paper, check citations, convert to LaTeX, guide my paper, parse reviews, revision roadmap, 寫論文, 學術論文, 論文大綱, 寫摘要, 修改論文, 檢查引用, 引導我寫論文, 帶我規劃論文, 逐章規劃, 論文架構, 審查意見, 修訂路線圖."
+description: "Use when writing or revising a full academic paper – outline, draft, abstract, citation check, format conversion, response to reviewers, revision roadmap, or guided chapter-by-chapter planning. IMRaD, literature review, theoretical, case study, policy brief and conference structures; APA 7, Vancouver, Chicago, MLA, IEEE; LaTeX, DOCX, PDF, Markdown. Triggers: write paper, academic paper, paper outline, write abstract, revise paper, check citations, parse reviews."
 metadata:
   version: "2.5"
   last_updated: "2026-03-27"

@@ -8,7 +8,14 @@ Personal Claude Code / Cowork plugin bundling DHH's most-used research skills so
 |---|---|
 | `notebooklm` | Google NotebookLM automation (create notebooks, sources, podcasts) |
 | `notebooklm-py` | Python-API variant of NotebookLM with richer programmatic access |
-| `epi-research` | Epidemiologist mentor: study design, causal inference, evidence synthesis |
+| `epi-research` | Epidemiology research hub: holds the epi judgement and routes to the skills below |
+| `critical-appraisal` | Appraise papers with JBI, AXIS, AMSTAR 2 or PRESS; every judgement quoted |
+| `srma` | Systematic review and meta-analysis end to end, with R scripts |
+| `storm-research` | Long-form, multi-perspective, fully cited articles |
+| `literature-review` | Review with a documented search and thematic synthesis |
+| `deep-research` | Multi-agent research pipeline (used only when named) |
+| `academic-pptx` | Content and structure for academic decks |
+| `grammer` | Grammar, proofreading and PEEL paragraph checks |
 | `using-superpowers` | Meta-skill: discover and invoke other skills properly |
 | `academic-pipeline` | Orchestrator: research → write → review for academic papers |
 | `academic-paper` | 12-agent pipeline for academic paper writing with style calibration |

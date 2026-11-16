@@ -1,0 +1,110 @@
+﻿{
+    "fetched":  "2026-10-28",
+    "versions":  {
+                     "harper":  "v3.0.0",
+                     "write-good":  "1.0.8",
+                     "weasel-words":  "0.1.1",
+                     "passive-voice":  "0.1.0",
+                     "no-cliches":  "0.3.6",
+                     "too-wordy":  "0.3.6",
+                     "adverb-where":  "0.2.6",
+                     "e-prime":  "0.10.4"
+                 },
+    "licences":  {
+                     "harper":  "Apache-2.0",
+                     "write-good":  "MIT",
+                     "weasel-words":  "MIT",
+                     "passive-voice":  "MIT",
+                     "no-cliches":  "MIT",
+                     "too-wordy":  "MIT",
+                     "adverb-where":  "MIT",
+                     "e-prime":  "MIT"
+                 },
+    "harper":  "https://github.com/Automattic/harper/tree/dd536c3009d8f4f8e8e28841fe3115dc944d67bb",
+    "files":  [
+                  {
+                      "path":  "harper/annotations.json",
+                      "sha256":  "884b55a18fe5f71a7703612382771a8773c9ff7bd684ec5ee01ddda7934cdded"
+                  },
+                  {
+                      "path":  "harper/default_config.json",
+                      "sha256":  "bd79554597952cc2a2883fa73fadeaeaf151bb64eb395d059145c4207b558a1e"
+                  },
+                  {
+                      "path":  "harper/dictionary.dict",
+                      "sha256":  "1313b2d972a8c92ba7a6c8cd2f5045323f6181a3919cc9cb780dfdf98bf2afeb"
+                  },
+                  {
+                      "path":  "harper/irregular_nouns.json",
+                      "sha256":  "a95fac8f714c8e77f70bdfc259719f4c7b4ed2869a365f363178b642e179d04d"
+                  },
+                  {
+                      "path":  "harper/irregular_verbs.json",
+                      "sha256":  "538625f84431b985f9d7356b2db07460a436bf848d456e9c433dbc0906b4f23e"
+                  },
+                  {
+                      "path":  "harper/LICENSE",
+                      "sha256":  "fbc8f1bffe04ab962340fabb1324d57d8b875070f67759d606516144ee53ac19"
+                  },
+                  {
+                      "path":  "harper/proper_noun_rules.json",
+                      "sha256":  "09016c3304440139096582c6f42a5184bfb833dfd8c507a95a393b2cb0c1b68d"
+                  },
+                  {
+                      "path":  "write-good/LICENSE",
+                      "sha256":  "897df2d117b16204eb1af4f1ffc9b3bf7359bcf88089d64e695c98451b91bca3"
+                  },
+                  {
+                      "path":  "write-good/adverb-where/adverbs.js",
+                      "sha256":  "2071e89d3929452f2cb45b1d6e350031ac2eae179dc0669ecbbfb4621d6e2565"
+                  },
+                  {
+                      "path":  "write-good/adverb-where/LICENSE",
+                      "sha256":  "31f062782e7ba3e32c96b55c7362928fa83e61128cff8e4dad82fc2001c9d4db"
+                  },
+                  {
+                      "path":  "write-good/e-prime/e-prime.js",
+                      "sha256":  "64d46e4249782add828e78284eb6909d2e2d6d262ebcfb0bd128b6797ff7affd"
+                  },
+                  {
+                      "path":  "write-good/e-prime/LICENSE",
+                      "sha256":  "ad286de582e8ffa73ecd21cfe265aacc8f81785ba8f02647b54e107a0b753baa"
+                  },
+                  {
+                      "path":  "write-good/lib/lexical-illusions.js",
+                      "sha256":  "f685332dd155545f6b5db562f32bdaaead15897314ecfe1a6dac4f59ab024cb9"
+                  },
+                  {
+                      "path":  "write-good/lib/starts-with-so.js",
+                      "sha256":  "06d270f9e6bff32ea8e5acffc04e9a9cc5299e0e2609afa13ea24299f62ea584"
+                  },
+                  {
+                      "path":  "write-good/lib/there-is.js",
+                      "sha256":  "d975e0eb553cdc85c7330f2e3c9b519c270406e28c309ab66180dbbeb6f84ad4"
+                  },
+                  {
+                      "path":  "write-good/no-cliches/cliches.js",
+                      "sha256":  "bf5c5a71a393ad6b6a0029f81142697fa93c87095dbb8c163a597394191b1340"
+                  },
+                  {
+                      "path":  "write-good/no-cliches/LICENSE",
+                      "sha256":  "ace7766b7ca595827b4ba1f087aa98da355ec441f548087e37861ed660de3760"
+                  },
+                  {
+                      "path":  "write-good/passive-voice/passive.js",
+                      "sha256":  "3243637a25d70c3ba3b53f09abeb45a9cea3d1de15f936e89860aa5f3407a69e"
+                  },
+                  {
+                      "path":  "write-good/too-wordy/LICENSE",
+                      "sha256":  "31f062782e7ba3e32c96b55c7362928fa83e61128cff8e4dad82fc2001c9d4db"
+                  },
+                  {
+                      "path":  "write-good/too-wordy/too-wordy.js",
+                      "sha256":  "d3d466695c4a1b3be8704d890ec051cef1b5348bd54a656ff44d12a13d6eadf3"
+                  },
+                  {
+                      "path":  "write-good/weasel-words/weasel.js",
+                      "sha256":  "b75c66da002e67e313dfc4116ec43a689a4ee108d39a69405a71ddc9a9e22500"
+                  }
+              ]
+}

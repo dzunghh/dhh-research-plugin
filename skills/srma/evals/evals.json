@@ -1,0 +1,70 @@
+{
+  "skill_name": "srma",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm starting a systematic review: do SGLT2 inhibitors reduce hospitalisation for heart failure in adults with type 2 diabetes compared with placebo? Can you set up the PICO, draft the key protocol decisions I need to lock in before searching (eligibility, outcomes, RoB tool, synthesis plan), and write me a full line-by-line Ovid MEDLINE search strategy? Save everything as markdown.",
+      "expected_output": "PICO table; eligibility criteria; protocol decisions incl. RoB 2, random-effects REML/HKSJ, prediction interval, pre-specified subgroups; PROSPERO registration; Ovid MEDLINE strategy with MeSH + free text, truncation, adjacency, Cochrane RCT filter, line numbers.",
+      "files": [],
+      "assertions": [
+        "PICO defines the intervention operationally by naming at least three SGLT2 inhibitors (e.g. empagliflozin, dapagliflozin, canagliflozin, ertugliflozin, sotagliflozin)",
+        "Outcome is pre-specified with a definition and a decision on first vs total HF hospitalisations, plus a minimum follow-up",
+        "Eligibility says how trials with mixed populations (not exclusively T2D) are handled, e.g. a threshold share or T2D subgroup data",
+        "Names RoB 2, applied per result with an overall judgement, and does not use a numeric quality score",
+        "Synthesis plan gives random effects with REML, Hartung-Knapp CI and a prediction interval, AND a rule for when NOT to pool (narrative/SWiM fallback)",
+        "Pre-specifies how risk of bias will feed into the synthesis (e.g. sensitivity analysis excluding high-risk results)",
+        "Pre-specifies a small number of subgroups, each with an expected direction of effect",
+        "Ovid search has numbered lines with a subject heading (exp .../) AND free-text drug names with truncation for the SGLT2 concept, ORed within concepts and ANDed between",
+        "RCT filter reproduces the Cochrane sensitivity-maximising lines (randomized controlled trial.pt., controlled clinical trial.pt., randomized.ab., placebo.ab., drug therapy.fs., randomly.ab., trial.ab., groups.ab., minus exp animals/ not humans.sh.) or tells the user to check the current filter",
+        "Search documentation fields are specified: database and platform, date run, hits per line, and any limits are justified",
+        "Plans more than MEDLINE: Embase, CENTRAL, trial registries (ClinicalTrials.gov/ICTRP), citation chasing, plus PRESS peer review or a known-key-papers test",
+        "Screening is dual independent with a calibration pilot, kappa, one reason per excluded full text, and de-duplication before screening",
+        "States PROSPERO registration AND a deviations log that will be reported",
+        "Checks whether the question is already answered by existing SGLT2i heart-failure meta-analyses (novelty / duplication)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here's my extracted data for 6 trials (evals/files/sglt2_hf_trials.csv) – events of HF hospitalisation by arm plus some trial characteristics. Run the meta-analysis, give me the forest plot, tell me whether I should test for publication bias, do a risk-of-bias figure (make sensible provisional RoB 2 judgements from the columns and flag them as provisional), a GRADE rating for this outcome, and a PRISMA 2020 flow diagram. Search counts: MEDLINE 1,412, Embase 2,106, CENTRAL 388, ClinicalTrials.gov 97; 1,150 duplicates; 2,853 screened, 2,790 excluded; 63 full texts sought, 3 not retrieved, 60 assessed; excluded: not RCT 21, wrong comparator 18, no HF outcome 15; 6 trials (6 reports) included.",
+      "expected_output": "Pooled RR with 95% CI and prediction interval from REML+HKSJ; forest.png; explicit statement that funnel/Egger not done because k<10; RoB 2 traffic light with provisional flag; GRADE with reasons per domain; PRISMA diagram with reconciled counts.",
+      "files": [
+        "evals/files/sglt2_hf_trials.csv"
+      ],
+      "assertions": [
+        "Random-effects pooled RR is about 0.745 (between 0.73 and 0.77) with a 95% CI close to 0.62-0.89",
+        "Prediction interval is reported numerically (within 0.02 of 0.55 to 1.01) AND the output notes that it crosses 1",
+        "I-squared (about 38%) and tau-squared are reported",
+        "States that Egger/funnel testing is not done because k = 6 < 10, and does not present a funnel plot as evidence of no publication bias",
+        "Reports the common-effect (Mantel-Haenszel) estimate (about 0.75) alongside the random-effects one",
+        "Identifies CANVAS-style B (RR about 0.96) as the least consistent trial and runs or reports leave-one-out / sensitivity",
+        "RoB 2 judgements are explicitly provisional, trial F is rated high risk, and SCORED-style E is not rated plain low risk (allocation concealment not reported)",
+        "GRADE starts at high for RCTs, gives a reason for each of the five downgrade domains, and links imprecision/inconsistency to the prediction interval crossing 1",
+        "Final certainty is Moderate or lower (not High), with the prediction interval crossing 1 named as a reason, and GRADE wording that matches the rating",
+        "Absolute effect per 1,000 is given with a stated comparator risk (pooled control about 3.3%, or a stated median study risk) and arithmetic consistent with the RR (about 8-9 fewer per 1,000)",
+        "Forest plot PNG and risk-of-bias figure PNG exist in outputs",
+        "PRISMA 2020 flow diagram PNG exists and its counts reconcile with those in the prompt",
+        "Post hoc analyses (e.g. leave-one-out) are labelled post hoc, and the user-supplied counts are flagged as not verified against the source papers"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "my supervisor wants a meta-analysis on prevalence of depression among medical students in vietnam. which quality appraisal tool should i use, how do i pool the prevalences (people keep telling me freeman-tukey?) and how do i handle the huge heterogeneity? also a follow-up: if we later include studies validating PHQ-9 against a clinical interview, how would that part be analysed? write it up as a methods plan in markdown.",
+      "expected_output": "CoCoPop framing; JBI prevalence checklist (not NOS/RoB 2); GLMM logit pooling with caveat on Freeman-Tukey (Schwarzer 2019); expect high I2, report prediction interval, pre-specified subgroups (screening tool/cut-off, year, region); DTA part: PIRD, QUADAS-2, bivariate model, not separate pooling; reporting guidelines.",
+      "files": [],
+      "assertions": [
+        "Frames the question with CoCoPop (condition, context, population) and defines each element",
+        "Recommends the JBI Checklist for Prevalence Studies (not RoB 2 or NOS) and names what it probes, e.g. sampling frame, sample size, response rate, valid measurement",
+        "Recommends GLMM/logit (not Freeman-Tukey) and explains the back-transformation problem, citing Schwarzer 2019 or the harmonic-mean-of-n issue",
+        "Says GLMM uses ML tau-squared, and recommends a prediction interval",
+        "Treats high I-squared as expected for prevalence: explores it by pre-specified subgroups or meta-regression instead of dropping studies",
+        "Pre-specified subgroups include screening instrument and cut-off, plus at least two of year, region, sampling method, sex, year of study",
+        "Warns that screening-scale prevalence is 'probable depression', not a clinical diagnosis, and treats this as a source of heterogeneity",
+        "Plans sensitivity analyses (exclude high risk of bias, leave-one-out) and cautions on small-study tests for proportions",
+        "Treats the PHQ-9 validation as a separate DTA question (PIRD) with 2x2 data per study and per threshold",
+        "DTA analysis uses the Reitsma bivariate model or HSROC (e.g. mada::reitsma), not separate pooling of sensitivity and specificity, and describes the SROC with a prediction region",
+        "Names QUADAS-2 with its four domains and addresses PHQ-9 threshold effects / multiple cut-offs",
+        "Names PRISMA 2020 and PRISMA-DTA and PROSPERO registration"
+      ]
+    }
+  ]
+}

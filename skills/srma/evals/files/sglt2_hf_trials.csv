@@ -1,0 +1,7 @@
+trial,year,hf_hosp_sglt2,n_sglt2,hf_hosp_placebo,n_placebo,blinding,allocation_concealment,attrition_pct
+EMPA-style A,2015,126,4687,95,2333,double-blind,central web,1.5
+CANVAS-style B,2017,180,5795,140,4347,double-blind,central web,3.8
+DECLARE-style C,2019,212,8582,286,8578,double-blind,IVRS,2.1
+VERTIS-style D,2020,139,5499,99,2747,double-blind,IVRS,4.0
+SCORED-style E,2021,98,5292,140,5292,double-blind,not reported,9.5
+Small open-label F,2022,6,150,14,148,open-label,sealed envelopes,18.0

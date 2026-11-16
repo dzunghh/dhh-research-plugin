@@ -1,0 +1,61 @@
+{
+  "skill_name": "srma",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm starting a systematic review: do SGLT2 inhibitors reduce hospitalisation for heart failure in adults with type 2 diabetes compared with placebo? Can you set up the PICO, draft the key protocol decisions I need to lock in before searching (eligibility, outcomes, RoB tool, synthesis plan), and write me a full line-by-line Ovid MEDLINE search strategy? Save everything as markdown.",
+      "expected_output": "PICO table; eligibility criteria; protocol decisions incl. RoB 2, random-effects REML/HKSJ, prediction interval, pre-specified subgroups; PROSPERO registration; Ovid MEDLINE strategy with MeSH + free text, truncation, adjacency, Cochrane RCT filter, line numbers.",
+      "files": [],
+      "assertions": [
+        "PICO states population (adults with T2D), intervention (SGLT2 inhibitors), comparator (placebo) and outcome (HF hospitalisation)",
+        "Names RoB 2 as the risk-of-bias tool",
+        "Specifies random-effects with REML tau-squared and Hartung-Knapp (HKSJ) CI",
+        "Plans to report a 95% prediction interval",
+        "Search strategy is numbered line-by-line in Ovid syntax",
+        "Search combines subject headings (exp .../) with free-text .ti,ab. terms and truncation",
+        "Search uses an adjacency operator (adjN)",
+        "Search applies an RCT filter (e.g. Cochrane HSSS)",
+        "Mentions protocol registration in PROSPERO",
+        "States that deviations from protocol will be logged/reported"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here's my extracted data for 6 trials (evals/files/sglt2_hf_trials.csv) \u2013 events of HF hospitalisation by arm plus some trial characteristics. Run the meta-analysis, give me the forest plot, tell me whether I should test for publication bias, do a risk-of-bias figure (make sensible provisional RoB 2 judgements from the columns and flag them as provisional), a GRADE rating for this outcome, and a PRISMA 2020 flow diagram. Search counts: MEDLINE 1,412, Embase 2,106, CENTRAL 388, ClinicalTrials.gov 97; 1,150 duplicates; 2,853 screened, 2,790 excluded; 63 full texts sought, 3 not retrieved, 60 assessed; excluded: not RCT 21, wrong comparator 18, no HF outcome 15; 6 trials (6 reports) included.",
+      "expected_output": "Pooled RR with 95% CI and prediction interval from REML+HKSJ; forest.png; explicit statement that funnel/Egger not done because k<10; RoB 2 traffic light with provisional flag; GRADE with reasons per domain; PRISMA diagram with reconciled counts.",
+      "files": [
+        "evals/files/sglt2_hf_trials.csv"
+      ],
+      "assertions": [
+        "Reports a pooled RR with 95% CI",
+        "Reports a 95% prediction interval",
+        "States funnel plot / Egger test not done because k < 10",
+        "A forest plot PNG exists in outputs",
+        "A risk-of-bias figure PNG exists in outputs",
+        "RoB judgements are explicitly labelled provisional",
+        "Trial F (open-label, 18% attrition) is judged at higher risk than the blinded trials",
+        "GRADE certainty rating is given with a reason for each of the five domains",
+        "A PRISMA 2020 flow diagram PNG exists in outputs",
+        "PRISMA counts reconcile: 2,853 screened, 60 assessed, 54 excluded with reasons, 6 included"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "my supervisor wants a meta-analysis on prevalence of depression among medical students in vietnam. which quality appraisal tool should i use, how do i pool the prevalences (people keep telling me freeman-tukey?) and how do i handle the huge heterogeneity? also a follow-up: if we later include studies validating PHQ-9 against a clinical interview, how would that part be analysed? write it up as a methods plan in markdown.",
+      "expected_output": "CoCoPop framing; JBI prevalence checklist (not NOS/RoB 2); GLMM logit pooling with caveat on Freeman-Tukey (Schwarzer 2019); expect high I2, report prediction interval, pre-specified subgroups (screening tool/cut-off, year, region); DTA part: PIRD, QUADAS-2, bivariate model, not separate pooling; reporting guidelines.",
+      "files": [],
+      "assertions": [
+        "Uses CoCoPop (or equivalent condition-context-population) framing",
+        "Recommends the JBI Checklist for Prevalence Studies as the appraisal tool",
+        "Does not recommend RoB 2 or NOS as the primary tool for prevalence studies",
+        "Recommends GLMM / logit-transformed proportions for pooling",
+        "Explains the problem with Freeman-Tukey back-transformation (e.g. Schwarzer 2019)",
+        "Recommends reporting a prediction interval for heterogeneity",
+        "Pre-specifies subgroups including screening instrument / cut-off",
+        "DTA part uses a bivariate (Reitsma) or HSROC model rather than separate univariate pooling",
+        "DTA part names QUADAS-2",
+        "Names PRISMA 2020 and PRISMA-DTA as reporting guidelines"
+      ]
+    }
+  ]
+}

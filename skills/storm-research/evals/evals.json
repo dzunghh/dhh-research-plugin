@@ -1,0 +1,62 @@
+{
+  "skill_name": "storm-research",
+  "notes": "Full assertion rationales live in each eval's eval_metadata.json in storm-research-workspace/iteration-N/. Mechanical checks (orphans, density, domain diversity, URL resolution) are automated by storm-research-workspace/check_citations.py.",
+  "evals": [
+    {
+      "id": 0,
+      "name": "broad-topic-coverage",
+      "prompt": "Write me a proper article on the rise of 15-minute cities. I want it to actually cover the whole thing, not just the urban planning angle - it's become a political fight as well and I want to understand both. Save it somewhere I can read it.",
+      "expected_output": "A long-form article with a lead section, hierarchical outline-derived sections spanning at least urban planning, politics/backlash, and implementation evidence, inline [n] citations throughout, and a resolving reference list. Intermediate artefacts (perspectives, conversation log, outline) should exist on disk.",
+      "files": [],
+      "assertions": [
+        "Research artefacts exist on disk separate from the article",
+        "At least 3 distinct named perspectives with substantively different questions",
+        "Hierarchical outline exists and the article's sections match it",
+        "Covers both urban-planning substance and political backlash, each with its own sources",
+        "Every top-level section contains at least one inline [n] citation",
+        "Citation density at least 1 marker per 150 words of body prose",
+        "No orphan markers or uncited reference entries in either direction",
+        "All reference URLs resolve when fetched",
+        "A citation audit artefact exists and reports a verdict",
+        "Reference list draws on at least 8 distinct domains"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "contested-evidence-citations",
+      "prompt": "I need a well-sourced deep dive on whether creatine supplementation actually improves cognitive performance in healthy adults. There's a huge amount of hype on this and I can't tell what the evidence really says. Be honest about where the evidence is weak.",
+      "expected_output": "An article that distinguishes what trials/meta-analyses found from what is claimed, attributes findings to specific studies rather than asserting them, cites primary literature (PubMed-class sources, not just health-news write-ups), and explicitly states gaps and limitations. Every quantitative claim cited.",
+      "files": [],
+      "assertions": [
+        "Research artefacts exist on disk separate from the article",
+        "At least 3 distinct named perspectives with substantively different questions",
+        "Cites primary literature (trials/meta-analyses), not only health-news write-ups",
+        "Findings attributed to specific studies rather than asserted as consensus",
+        "Hedging matches the sources: no 'associated with' rendered as 'improves'",
+        "Explicitly states where evidence is weak, absent or contested",
+        "Every quantitative claim carries a citation",
+        "No orphan markers or uncited reference entries in either direction",
+        "All reference URLs resolve and cited papers exist as described",
+        "A citation audit artefact exists and reports a verdict"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "costorm-exploration-mode",
+      "prompt": "I'm trying to get my head around the debate over how AI diagnostic tools should be regulated, but honestly I don't know enough yet to know what questions I should be asking. Can you explore it with me from a few different expert angles rather than just handing me an essay?",
+      "expected_output": "Co-STORM mode: a warm-start research pass, named experts with distinct roles, grounded and cited conversational turns, a moderator intervention introducing an unexplored angle, a running mind map artefact, and pauses offering the user the floor rather than a 20-turn unattended transcript.",
+      "files": [],
+      "assertions": [
+        "Co-STORM roundtable mode chosen over STORM article mode",
+        "A warm-start research pass happened before the conversation opened",
+        "At least 2 experts with distinct roles representing genuinely different interests",
+        "Expert turns are grounded and cited with [n] markers",
+        "A moderator intervention introduces an unexplored angle and is itself sourced",
+        "A hierarchical mind map artefact exists with source markers on entries",
+        "At least one pause point offers the user the floor",
+        "Every [n] resolves to a source entry and all source URLs resolve",
+        "Surfaces what is thin or contested rather than a smooth consensus"
+      ]
+    }
+  ]
+}

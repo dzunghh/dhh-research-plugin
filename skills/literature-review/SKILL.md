@@ -186,6 +186,7 @@ Literature reviews follow a structured, multi-phase workflow:
    - Funding sources and conflicts of interest
 
 2. **Assess Study Quality**:
+   - **Narrative or non-systematic review**: use the `critical-appraisal` skill (JBI / AXIS / AMSTAR 2) – one design-matched row per paper; for a formal systematic review use `srma`
    - **For RCTs**: Use Cochrane Risk of Bias tool
    - **For observational studies**: Use Newcastle-Ottawa Scale
    - **For systematic reviews**: Use AMSTAR 2
