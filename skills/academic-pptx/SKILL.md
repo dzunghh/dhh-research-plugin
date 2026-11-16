@@ -56,15 +56,15 @@ Default to **Structured Argument**. If the user mentions a paper, a study, a dat
 |------|--------|----------|
 | Conference | 10–20 min | One or two findings; minimal methods |
 | Seminar | 45–60 min | Several findings; methods in depth; leave room for discussion |
-| Thesis defence | 45–60 min | All studies; justify each design decision; backup slides for likely questions |
+| Thesis defence | 45–60 min (confirm local format) | All studies; justify each design decision; backup slides for likely questions |
 | Grant briefing | 10–20 min | Problem → significance → approach → feasibility → impact; preliminary data |
 | Journal club | 20–45 min | Context → methods → results → critique (appraise with `critical-appraisal`) |
 
-Time split: introduction 15–20%, methods 15–20%, **results 40–50%**, discussion 15–20%, conclusion 5%. Set three checkpoints (for 15 min: introduction done by 4, halfway through results by 8, conclusions from 12). Mark in advance which slides to skip if running late; never skip the conclusions. Slide budgets: [content_guidelines.md](content_guidelines.md) §7.
+Time split: introduction 15–20%, methods 15–20%, **results 40–50%**, discussion 15–20%, conclusion 5%. Set checkpoints (for 15 min: introduction and methods done by 5, halfway through results by 8, discussion from 11, conclusions from 14). The split fits research talks; grant briefings and journal clubs follow their own structure above. Mark in advance which slides to skip if running late; never skip the conclusions. Slide budgets: [content_guidelines.md](content_guidelines.md) §7.
 
 ### When to use `scientific-slides` instead
 
-Only for a LaTeX Beamer deck, slides generated as images and combined into a PDF, or its validation scripts. Its design advice (visuals and icons on every slide, themed palettes) conflicts with the standards below – do not load both skills for one deck.
+Only for a LaTeX Beamer deck, slides generated as images and combined into a PDF, or its validation scripts. Its design advice (visuals on every slide, themed palettes) conflicts with the standards below – do not load both skills for one deck.
 
 ---
 

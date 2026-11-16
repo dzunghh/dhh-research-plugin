@@ -2,7 +2,7 @@
 
 Items are paraphrased. Source: Downes MJ, Brennan ML, Williams HC, Dean RS. Development of a critical appraisal tool to assess the quality of cross-sectional studies (AXIS). BMJ Open 2016;6:e011458.
 
-Answer Yes / No / Don't know. AXIS has no numerical score; judge overall quality from where the No answers fall. **For items 7, 13 and 19 "Yes" is the unfavourable answer** – do not count Yes answers without reversing them.
+Answer Yes / No / Don't know. AXIS has no numerical score; judge overall quality from where the No answers fall. **For items 13 and 19 "Yes" is the unfavourable answer** – reverse them before counting.
 
 | # | Section | Item |
 |---|---|---|
@@ -27,11 +27,11 @@ Answer Yes / No / Don't know. AXIS has no numerical score; judge overall quality
 | 19 | Other | Funding or conflicts of interest that may affect interpretation (Yes = concern) |
 | 20 | Other | Ethical approval or consent obtained |
 
-Item 7 is worded positively in the tool (measures were taken = good); the reversal note above applies to 13 and 19 only when counting. When in doubt, write the judgement as "favourable / unfavourable" instead of Yes / No.
+When in doubt, write the judgement as "favourable / unfavourable" instead of Yes / No.
 
 ## Reading the pattern
 - **Representativeness chain (4 → 5 → 6 → 7 → 13 → 14):** target population → frame → selection → non-response. A break anywhere limits what the prevalence estimate describes; say which population the estimate actually applies to.
-- **Census:** items 5–7 do not apply only if the participants truly are the whole target population.
+- **Census:** items 5–6 do not apply, and only if the participants truly are the whole target population.
 - **Measurement (8–9):** unvalidated instruments → misclassification; state whether it is likely non-differential (usually towards the null for a binary exposure) or differential.
-- **Selective reporting (16):** analyses in the Methods with no result, or "tended towards significance".
+- **Selective reporting (16):** analyses in the Methods with no result. Spin such as "tended towards significance" belongs to item 17.
 - **AXIS has no confounding item.** For an analytical cross-sectional study, add the JBI confounding items (5–6) or appraise confounding under the main threat.

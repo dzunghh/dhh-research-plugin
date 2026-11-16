@@ -21,14 +21,15 @@ Only the abstract available? Say so on the first line and mark every item that n
 | Design | Tool | Reference |
 |---|---|---|
 | Cohort, case-control, analytical cross-sectional, prevalence, case series, case report, quasi-experimental, RCT, diagnostic accuracy, economic evaluation, qualitative, text and opinion | JBI checklist for that design | `references/jbi.md` |
-| Cross-sectional (survey-type; when sampling and non-response matter most) | AXIS | `references/axis.md` |
-| Systematic review, with or without meta-analysis | AMSTAR 2 (JBI SR checklist for a quick screen) | `references/amstar2.md` |
+| Cross-sectional, only when the user or the review protocol names AXIS (otherwise: prevalence survey → JBI prevalence; association at one time point → JBI analytical cross-sectional) | AXIS | `references/axis.md` |
+| Systematic review of interventions (RCTs, non-randomised studies or both) | AMSTAR 2 | `references/amstar2.md` |
+| Other reviews (prevalence, diagnostic accuracy, qualitative, scoping) | JBI systematic review checklist | `references/jbi.md` |
 | A search strategy | PRESS | `references/reporting-checklists.md` |
 | Completeness of reporting only | STROBE, CONSORT, PRISMA-ScR, TRIPOD | `references/reporting-checklists.md` |
 
 **Reporting is not quality.** STROBE, CONSORT, PRISMA-ScR and TRIPOD say whether a study was described fully, not whether it was done well. Use them only when asked about reporting, and label the output "reporting completeness".
 
-**Boundary.** RoB 2, ROBINS-I, ROBINS-E, Newcastle–Ottawa, GRADE, and any appraisal that feeds a pooled estimate belong to the `srma` skill. For a deeper look at one causal threat (confounding structure, time zero, positivity), use the `epi-research` skill (its causal-identification reference).
+**Boundary.** RoB 2, ROBINS-I, ROBINS-E, Newcastle–Ottawa, GRADE, and any appraisal that feeds a pooled estimate belong to the `srma` skill. Target trial emulations, Mendelian randomisation and prediction-model studies have no tool here: return to `epi-research` (TARGET statement, STROBE-MR; PROBAST is not bundled). Unpublished manuscripts and protocols go to `academic-paper-reviewer`. For a deeper look at one causal threat (confounding structure, time zero, positivity), use the `epi-research` skill (its causal-identification reference).
 
 ## Output – one paper
 

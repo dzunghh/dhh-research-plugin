@@ -22,7 +22,7 @@ Load for any literature search, review, gap check or evidence summary. Connector
 | Bibliography audit (DOI registered? authors, pages, year) | **Scholar Sidekick** `auditBibliography` (whole list, ≤ 25 per call) or `verifyCitation` (one reference – catches a real DOI paired with an invented title) and `checkRetraction`; **FastTrack** `verify_reference` as fallback |
 | Grey literature, policy documents, current events | `perplexity-search` skill |
 
-Order for a standard review question: Consensus or PubMed to find → PubMed/Elicit full text to read → FastTrack `verify_reference` on the final list.
+Order for a standard review question: Consensus or PubMed to find → PubMed/Elicit full text to read → Scholar Sidekick `auditBibliography` on the final list (FastTrack `verify_reference` as fallback).
 
 ## Reading before citing
 

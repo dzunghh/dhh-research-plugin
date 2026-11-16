@@ -12,12 +12,12 @@ For the item wording, read the checklist itself: a local copy if the user keeps 
 | PRISMA-ScR | Scoping reviews | 22 (20 essential, 2 optional) | Items 12 and 16 (critical appraisal) are the optional ones |
 | TRIPOD | Prediction model development or validation | 22 (2015) | TRIPOD+AI 2024 has 27 items and covers regression and machine learning |
 
-## Items most often missing – check these first
+## Commonly under-reported items – check these first
 
-- **STROBE:** how the study size was arrived at (10); how bias was addressed (9); missing data and loss to follow-up (12c–d); numbers at each stage with reasons (13); absolute risks alongside relative (16c); generalisability (21).
-- **CONSORT:** how the sequence was generated and concealed (8–9); who was blinded (11); sample size (7); flow diagram with losses (13); harms (19); registration and protocol access (23–24).
-- **PRISMA-ScR:** protocol and registration (5); full search for one database (8); data-charting process (10); a stated rationale when no appraisal was done (12).
-- **TRIPOD:** how predictors were handled and selected (7, 10); missing data (9); the full model, with intercept or baseline survival (15); calibration as well as discrimination (16).
+- **STROBE:** how the study size was arrived at (10); how bias was addressed (9); missing data (12c) and, for cohorts, loss to follow-up (12d); numbers at each stage with reasons (13); absolute risks alongside relative (16c); generalisability (21).
+- **CONSORT (2010 numbering):** how the sequence was generated and concealed (8–9); who was blinded (11); sample size (7); flow diagram with losses (13); harms (19); registration and protocol access (23–24).
+- **PRISMA-ScR:** protocol and registration (5); full search for one database (8); data-charting process (10); if appraisal was done, its rationale, methods and use in the synthesis (12; optional).
+- **TRIPOD (2015 numbering):** how predictors were handled and selected (7, 10); missing data (9); the full model, with intercept or baseline survival (15); calibration as well as discrimination (16).
 
 ## PRESS – peer review of a search strategy
 

@@ -1,6 +1,6 @@
 # JBI critical appraisal checklists
 
-Items are paraphrased. Source: JBI Critical Appraisal Tools, https://jbi.global/critical-appraisal-tools (Moola et al. 2020 for aetiology and risk; Munn et al. 2015 for prevalence; Barker et al. 2023 for the revised RCT tool; Barker et al. 2024 for quasi-experimental).
+Items are paraphrased. Source: JBI Critical Appraisal Tools, https://jbi.global/critical-appraisal-tools (Moola et al. 2020 for aetiology and risk; Munn et al. 2015 for prevalence; Barker et al. 2023 for the revised RCT tool; Barker et al. 2024 for quasi-experimental; for the other tools see the citation printed on each checklist).
 
 Answer each item Yes / No / Unclear / Not applicable. JBI sets no cut-off score; a review team may pre-specify one.
 
@@ -22,7 +22,7 @@ Cohort · Case-control · Analytical cross-sectional · Prevalence · Case serie
 10. Strategies used to address incomplete follow-up
 11. Appropriate statistical analysis
 
-Watch for: immortal time (item 6, 8), differential loss (9–10), adjustment for mediators or colliders (5).
+Watch for: differential loss (9–10); adjustment for mediators or colliders (5); immortal time and time-zero misalignment – not an item, so check that exposure classification uses no post-baseline information and report it under main threat.
 
 ## Case-control (10)
 1. Groups comparable apart from disease status
@@ -36,7 +36,7 @@ Watch for: immortal time (item 6, 8), differential loss (9–10), adjustment for
 9. Exposure period long enough to be meaningful
 10. Appropriate statistical analysis
 
-Watch for: control source (item 1 – do controls represent the population that produced the cases?), recall bias (5), over-matching (2).
+Watch for: control source (items 1, 3 – do controls represent the population that produced the cases?), recall bias (5), over-matching (2).
 
 ## Analytical cross-sectional (8)
 1. Inclusion criteria clearly defined
@@ -111,7 +111,7 @@ Watch for: secular trend and regression to the mean when item 2 or 5 fails.
 12. Appropriate statistical analysis
 13. Trial design appropriate, and deviations from a standard parallel design (cluster, crossover) accounted for
 
-Items 7–12 are judged per outcome in the revised tool. For a trial inside a formal SR/MA use RoB 2 via `srma`.
+In the revised tool items 7–9 are judged per outcome, 10–12 per result (each reported estimate) and 13 per study. For a trial inside a formal SR/MA use RoB 2 via `srma`.
 
 ## Diagnostic test accuracy (10)
 1. Consecutive or random sample enrolled
